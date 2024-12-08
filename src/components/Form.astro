@@ -1,0 +1,57 @@
+---
+import ButtonIcon from "./ButtonIcon.astro"
+---
+<form class="form" action="https://formspree.io/f/xnqoqzqz" method="POST">
+    <label for="">Nombre completo <span>*</span></label>
+    <input type="text" name="name" placeholder="Nombre" required>
+    <label for="">Correo electrónico <span>*</span></label>
+    <input type="email" name="_replyto" placeholder="Correo" required>
+    <label for="">Tu mensaje <span>*</span></label>
+    <textarea name="message" placeholder="Mensaje" required></textarea>
+    <div>
+        <ButtonIcon link="#" type="primary">Enviar mensaje</ButtonIcon>
+
+    </div>
+</form>
+
+<style>
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        margin-bottom: 4px;
+        font-size: var(--text-base);
+        font-family: var(--text-regular);
+        color: var(--neutral-600);
+    }
+    label span{
+        color: var(--accent-500);
+    }
+    input{
+        margin-bottom: 16px;
+        height: 64px;
+        padding: 20px 24px;
+        border-radius: 12px;
+        border: 1px solid var(--background-300);
+        font-size: var(--text-base);
+        font-family: var(--text-regular);
+        color: var(--neutral-300);
+    }
+    input::placeholder{
+        color: var(--neutral-300);
+    }
+    textarea{
+        margin-bottom: 16px;
+        height: 200px;
+        padding: 20px 24px;
+        border-radius: 12px;
+        border: 1px solid var(--background-300);
+        font-size: var(--text-base);
+        font-family: var(--text-regular);
+        color: var(--neutral-300);
+    }
+    textarea::placeholder{
+        color: var(--neutral-300);
+    }
+</style>

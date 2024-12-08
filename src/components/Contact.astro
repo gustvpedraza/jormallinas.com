@@ -1,0 +1,49 @@
+---
+import Form from './Form.astro'
+---
+<section class="contact-section">
+    <img class="illustration illustration-1" src="/ilustration-1.png" alt="illustration of a leaf">
+    <img class="illustration illustration-2" src="/ilustration-2.png" alt="illustration of a leaf">
+    <div class="contact-section__text">
+        <h3 class="text-7xl text-semibold">Contáctame</h3>
+        <p>
+            Tienes una idea o propuesta en mente, envíame un mensaje o escríbeme en LinkedIn.
+        </p>
+    </div>
+    <div class="contact-section__form">
+        <Form/>
+    </div>
+</section>
+<style>
+    .contact-section{
+        background-color: var(--background-100);
+        margin-top: calc(118px + 19px);
+        display: grid;
+        grid-template-columns: 475px 632px;
+        gap: 108px;
+        justify-content: center;
+        align-items: center;
+        padding: 118px 112px;
+        position: relative;
+    }
+
+    h3 {
+        color: var(--secundary-700);
+    }
+    .contact-section__text h3{
+        margin-bottom: 16px;
+    }
+    .illustration{
+        position: absolute;
+        max-width: 460px;
+    }
+    .illustration-1{
+        top: 40px;
+        left: 0;
+    }
+    .illustration-2{
+        bottom: 40px;
+        left: 0;
+    }
+
+</style>

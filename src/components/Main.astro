@@ -1,0 +1,122 @@
+---
+import { getCollection } from 'astro:content';
+import Button from "./Button.astro";
+const posts = (await getCollection('proyectos')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+<main class="main">
+    <h3 class="main__title text-8xl text-light text-center">
+        Proyectos <b class="text-semibold">destacados</b>
+    </h3>
+    <p class="text-center text-regular">
+        <b class="text-semibold text-xl">
+            Te invito a explorar algunos de mis proyectos.
+        </b>
+    </p>
+    <p class="text-center text-regular text-xl">
+        Cada proyecto refleja mi compromiso con convertir ideas en soluciones visuales claras
+        <br>
+        y efectivas, mostrando mi nivel de detalle en cada etapa.
+    </p>
+
+    <section class="projects">
+        <ul>
+            {
+                posts.map((post) => (
+                        <li>
+                            <a href={`/proyectos/${post.id}/`}>
+                                <img width={584} height={524} src={post.data.heroImage} alt="" />
+                            </a>
+                            <div class="projects__card-content">
+                                <div>
+                                    <h5 class="projects__label text-xl text-medium">{post.data.type}</h5>
+                                    <h4 class="projects__title text-4xl text-light">
+                                        <b class="text-bold">{post.data.title.split(' ')[0]}</b>{' '}
+                                        {post.data.title.split(' ').slice(1).join(' ')}
+                                    </h4>
+                                </div>
+                                <div class="button-wrapper">
+                                    <Button link="#form" type="secundary">
+                                        <i class="projects__icon">
+                                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z"/>
+                                            </svg>
+                                        </i>
+                                    </Button>
+                                </div>
+                            </div>
+                        </li>
+                ))
+            }
+        </ul>
+    </section>
+</main>
+<style>
+    .main {
+        border-radius: 40px;
+        margin-top: -56px;
+        background-color: white;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 2;
+        padding: 88px 112px;
+    }
+    .main__title{
+        color: var(--secundary-700);
+        margin-bottom: 16px;
+    }
+    .projects{
+        margin-top: 82px;
+    }
+    .projects ul{
+        display: grid;
+        grid-template-columns: 584px 584px;
+        gap: 48px;
+        place-items: center;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .projects__card-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .projects__label{
+        margin-top: 8px;
+    }
+    .projects__title{
+        color: var(--secundary-900);
+    }
+
+    .projects ul li{
+        list-style: none;
+        max-width: 584px;
+    }
+    .projects ul li a{
+        text-decoration: none;
+        color: var(--secundary-900);
+    }
+    .projects__icon{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        padding: 4px;
+        margin-left: 2px;
+        margin-right: 2px;
+        position: relative;
+        top: 2px;
+    }
+    i svg path{
+        fill: var(--secundary-700);
+        transition: all .3s ease;
+    }
+
+    .button-wrapper:hover i svg path{
+        fill: var(--secundary-900);
+        transition: all .3s ease;
+    }
+
+</style>

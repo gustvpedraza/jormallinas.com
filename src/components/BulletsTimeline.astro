@@ -1,0 +1,56 @@
+---
+interface Props {
+    color: string;
+}
+
+const { color } = Astro.props;
+---
+
+<div class="bullets">
+    <div class:list={["bullet-point", color]}></div>
+</div>
+<style>
+   .bullet-point {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        padding: 4px;
+        position: relative;
+        background-color: var(--neutral-0);
+        border: 2px solid var(--background-300);
+    }
+    .bullet-point::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 50%;
+        background-color: var(--bullet-color);
+    }
+    .bullet-point::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 162px;
+        background-color: var(--background-300);
+        left: 50%;
+        transform: translateX(-50%);
+        top: 46px;
+    }
+
+    .bullet-point.tertiary::before {
+        display: none;
+    }
+
+    .accent {
+        --bullet-color: var(--accent-300);
+    }
+    .secondary {
+        --bullet-color: var(--secundary-300);
+    }
+    .tertiary {
+        --bullet-color: var(--tertiary-200);
+    } 
+</style>

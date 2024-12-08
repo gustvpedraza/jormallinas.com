@@ -1,54 +1,60 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import Button from './Button.astro';
+import Logo from './Logo.astro';
 ---
 
 <nav>
-	<h2><a href="/">{SITE_TITLE}</a></h2>
+	<Logo color/>
 	<div class="internal-links">
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink class="text-xl active" href="/">Inicio</HeaderLink>
+		<HeaderLink class="text-xl" href="/blog">Proyectos</HeaderLink>
+		<HeaderLink class="text-xl" href="/about">Servicios</HeaderLink>
+		<HeaderLink class="text-xl" href="/about">Sobre mí</HeaderLink>
 	</div>
-	<div>
-		<a href="#">Contacto</a>
-	</div>
+	<Button link="#form" type="primary">
+		Contactar
+	</Button>
 </nav>
 <style>
 	nav{
 		position: absolute;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
+		top: 24px;
+		z-index: 1;
+		background-color: var(--neutral-0);
+		border-radius: 100px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 12px 8px 12px 40px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		max-height: 80px;
+		width: 1008px;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+	.nav__logo{
+		fill: #1E3A2B;
+		margin-top: 8px;
+	}
+
+	nav .internal-links a{
+		color: var(--secundary-900);
+		margin: 0 16px;
 		text-decoration: none;
+		font-family: var(--text-medium);
+
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	nav .internal-links .active{
+		color: var(--secundary-500);
+		font-family: var(--text-semibold);
 	}
-	.social-links,
-	.social-links a {
+	.internal-links{
+		width: 693px;
 		display: flex;
+		justify-content: center;
 	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+
+
+
+
 </style>

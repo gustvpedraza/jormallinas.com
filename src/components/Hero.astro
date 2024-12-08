@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets'
+import heroImage from '../assets/character-1.png';
+---
+
+<header class="hero">
+    <div class="hero__text">
+        <h1 class="title">Hola!</h1>
+        <p class="text-center text-3xl text-semibold">Soy Jormary Llinas</p>
+        <h2 class="text-center text-5xl text-light">UX/UI Designer & Web Designer</h2>
+    </div>
+    <Image class="hero__img" src={heroImage} alt="Hero" height="520" />
+</header>
+<style>
+    .hero{
+        background-color: var(--background-50);
+        background-image: url("../assets/hero-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        position: relative;
+        height: 732px;
+        display: grid;
+        place-items: center;
+    }
+    .title{
+        font-family: 'Pacifico-Regular', sans-serif;
+        font-size: 8.75rem;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+    .hero-text .title,h1,p,h2{
+        color: var(--secundary-700);
+    }
+    .hero__img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+</style>

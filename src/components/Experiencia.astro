@@ -1,0 +1,104 @@
+---
+import BulletsTimeline from "./BulletsTimeline.astro";
+---
+
+<div>
+    <h3 class="text-7xl text-center text-semibold">Experiencia</h3>
+</div>
+<div class="timeline">
+    <div class="timeline-item">
+        <div class="job-title">
+            <h4 class="text-3xl text-medium">
+                UX/UI Designer <br> Web Designer
+            </h4>
+        </div>
+        <div class="bullets-container">
+            <BulletsTimeline color="accent" />
+        </div>
+        <div class="job-description">
+            <div>
+                <h4 class="text-3xl text-medium">
+                    Independiente
+                </h4>
+                <h5 class="text-2xl text-light">
+                    Ago. 2022 - Actual
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <div class="job-title">
+            <h4 class="text-3xl text-medium">
+                UX/UI Designer
+            </h4>
+        </div>
+        <div class="bullets-container">
+            <BulletsTimeline color="secondary" />
+        </div>
+        <div class="job-description">
+            <div>
+                <h4 class="text-3xl text-medium">
+                    Bolsiyo App
+                </h4>
+                <h5 class="text-2xl text-light">
+                    Abr. 2023 - Jul. 2024
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <div class="job-title">
+            <h4 class="text-3xl text-medium">
+                Digital Designer
+            </h4>
+        </div>
+        <div class="bullets-container">
+            <BulletsTimeline color="tertiary" />
+        </div>
+        <div class="job-description">
+            <div>
+                <h4 class="text-3xl text-medium">
+                    Independiente
+                </h4>
+                <h5 class="text-2xl text-light">
+                    Ene. 2019 - Dic. 2021
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    h3 {
+        color: var(--secundary-700);
+        margin-bottom: 24px;
+    }
+    .timeline{
+        height: 454px;
+    }
+    .timeline-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 42px;
+        margin: 0 auto;
+        margin-bottom: 128px;
+    }
+    .job-title, .job-description{
+        color: var(--secundary-900);
+    }
+    .job-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .job-description{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+
+    
+</style>
