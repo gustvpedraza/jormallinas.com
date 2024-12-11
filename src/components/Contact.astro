@@ -5,7 +5,7 @@ import Form from './Form.astro'
     <img class="illustration illustration-1" src="/ilustration-1.png" alt="illustration of a leaf">
     <img class="illustration illustration-2" src="/ilustration-2.png" alt="illustration of a leaf">
     <div class="contact-section__text">
-        <h3 class="text-7xl text-semibold">Contáctame</h3>
+        <h3 class="text-7xl sm-text-6xl text-semibold">Contáctame</h3>
         <p>
             Tienes una idea o propuesta en mente, envíame un mensaje o escríbeme en LinkedIn.
         </p>
@@ -17,7 +17,6 @@ import Form from './Form.astro'
 <style>
     .contact-section{
         background-color: var(--background-100);
-        margin-top: calc(118px + 19px);
         display: grid;
         grid-template-columns: 475px 632px;
         gap: 108px;
@@ -27,12 +26,38 @@ import Form from './Form.astro'
         position: relative;
     }
 
+    @media (max-width: 1367px){
+        .contact-section{
+            grid-template-columns: 632px;
+            gap: 54px;
+        }
+    }
+    
+    @media (max-width: 575.98px){
+        .contact-section{
+            grid-template-columns: 1fr;
+            padding: 58px 24px;
+            gap: 54px;
+        }
+    }
+
     h3 {
         color: var(--secundary-700);
     }
     .contact-section__text h3{
         margin-bottom: 16px;
     }
+    @media (max-width: 1367px){
+        .contact-section__text{
+            text-align: center;
+        }
+        .contact-section__text p{
+            max-width: 475px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
     .illustration{
         position: absolute;
         max-width: 460px;
@@ -44,6 +69,26 @@ import Form from './Form.astro'
     .illustration-2{
         bottom: 40px;
         left: 0;
+    }
+    @media (max-width: 1367px){
+        .illustration-1{
+        top: 40px;
+        left: -320px;
+        }
+        .illustration-2{
+            bottom: 40px;
+            left: -320px;
+        }
+    }
+
+    @media (max-width: 575.98px){
+        .illustration-1{
+        top: -24px;
+        left: -380px;
+        }
+        .illustration-2{
+            display: none;
+        }
     }
 
 </style>

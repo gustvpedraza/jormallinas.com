@@ -6,15 +6,15 @@ const posts = (await getCollection('proyectos')).sort(
 );
 ---
 <main class="main">
-    <h3 class="main__title text-8xl text-light text-center">
+    <h3 class="main__title text-8xl sm-text-6xl xs-text-4xl text-light text-center">
         Proyectos <b class="text-semibold">destacados</b>
     </h3>
     <p class="text-center text-regular">
-        <b class="text-semibold text-xl">
+        <b class="text-semibold text-xl xs-text-base">
             Te invito a explorar algunos de mis proyectos.
         </b>
     </p>
-    <p class="text-center text-regular text-xl">
+    <p class="text-center text-regular text-xl xs-text-base">
         Cada proyecto refleja mi compromiso con convertir ideas en soluciones visuales claras
         <br>
         y efectivas, mostrando mi nivel de detalle en cada etapa.
@@ -30,10 +30,10 @@ const posts = (await getCollection('proyectos')).sort(
                             </a>
                             <div class="projects__card-content">
                                 <div>
-                                    <h5 class="projects__label text-xl text-medium">{post.data.type}</h5>
-                                    <h4 class="projects__title text-4xl text-light">
+                                    <h5 class="projects__label text-xl xs-text-base text-medium">{post.data.type}</h5>
+                                    <h4 class="projects__title text-4xl xs-text-2xl text-light">
                                         <b class="text-bold">{post.data.title.split(' ')[0]}</b>{' '}
-                                        {post.data.title.split(' ').slice(1).join(' ')}
+                                        <span>{post.data.title.split(' ').slice(1).join(' ')}</span>
                                     </h4>
                                 </div>
                                 <div class="button-wrapper">
@@ -54,15 +54,20 @@ const posts = (await getCollection('proyectos')).sort(
 </main>
 <style>
     .main {
-        border-radius: 40px;
+        border-radius: 40px 40px 0 0;
         margin-top: -56px;
         background-color: white;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        z-index: 2;
-        padding: 88px 112px;
+        z-index: 0;
+        padding: 88px 112px 118px;
+    }
+    @media (max-width: 575.98px){
+    	.main{
+    		padding: 58px 24px;
+    	}
     }
     .main__title{
         color: var(--secundary-700);
@@ -71,14 +76,39 @@ const posts = (await getCollection('proyectos')).sort(
     .projects{
         margin-top: 82px;
     }
-    .projects ul{
+
+    @media (min-width: 1367px){
+        .projects ul{
+            display: grid;
+            grid-template-columns: 584px 584px;
+            gap: 48px;
+            place-items: center;
+            margin: 0 auto;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 1367px){
+        .projects ul{
         display: grid;
-        grid-template-columns: 584px 584px;
+        grid-template-columns: 584px;
         gap: 48px;
         place-items: center;
         margin: 0 auto;
         justify-content: center;
+        }
     }
+
+    @media (max-width: 575.98px){
+        .projects ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        place-items: center;
+        margin: 0 auto;
+        justify-content: center;
+        }
+    }
+ 
     .projects__card-content{
         display: flex;
         justify-content: space-between;
@@ -90,6 +120,7 @@ const posts = (await getCollection('proyectos')).sort(
     .projects__title{
         color: var(--secundary-900);
     }
+ 
 
     .projects ul li{
         list-style: none;
@@ -119,4 +150,17 @@ const posts = (await getCollection('proyectos')).sort(
         transition: all .3s ease;
     }
 
+    @media (max-width: 575.98px){
+        .projects__title{
+            display: flex;
+            flex-direction: column;
+        }
+        projects__title span{
+            display: block !important;
+        }
+        projects__title b{
+            display: block !important;
+        }
+    	
+    }
 </style>

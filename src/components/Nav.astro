@@ -4,57 +4,253 @@ import Button from './Button.astro';
 import Logo from './Logo.astro';
 ---
 
-<nav>
-	<Logo color/>
-	<div class="internal-links">
-		<HeaderLink class="text-xl active" href="/">Inicio</HeaderLink>
-		<HeaderLink class="text-xl" href="/blog">Proyectos</HeaderLink>
-		<HeaderLink class="text-xl" href="/about">Servicios</HeaderLink>
-		<HeaderLink class="text-xl" href="/about">Sobre mí</HeaderLink>
-	</div>
-	<Button link="#form" type="primary">
-		Contactar
-	</Button>
+<nav class="">
+    <Logo color/>
+	<button class="hamburger-menu primary" id="menu-toggle">
+		<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.90625 1.3125H18.0938M0.90625 6H18.0938M0.90625 10.6875H18.0938" stroke="#1E3A2B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+        </svg>
+	</button>
+    <div class="internal-links sm-none">
+        <HeaderLink class="text-xl active sm-none" href="/">Inicio</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/blog">Proyectos</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/about">Servicios</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/about">Sobre mí</HeaderLink>
+    </div>
+
+    <div class="btn-wrapper sm-none">
+        <Button link="#form" type="primary">
+            Contactar
+        </Button>
+    </div>
 </nav>
-<style>
-	nav{
-		position: absolute;
+<div class="mobile-menu">
+
+	<div class="mobile-menu__links">
+		<button class="close-btn" id="menu-toggle">
+		
+			<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1.3674 0.445867C1.24529 0.323757 1.07968 0.255156 0.906987 0.255156C0.734297 0.255156 0.56868 0.323757 0.44657 0.445867C0.32446 0.567977 0.255859 0.733594 0.255859 0.906284C0.255859 0.991791 0.272701 1.07646 0.305424 1.15546C0.338146 1.23446 0.386108 1.30624 0.44657 1.3667L8.5799 9.50003L0.44657 17.6334C0.386108 17.6938 0.338146 17.7656 0.305424 17.8446C0.272701 17.9236 0.255859 18.0083 0.255859 18.0938C0.255859 18.1793 0.272701 18.264 0.305424 18.343C0.338146 18.422 0.386108 18.4937 0.44657 18.5542C0.507033 18.6147 0.578813 18.6626 0.657811 18.6953C0.73681 18.7281 0.82148 18.7449 0.906987 18.7449C0.992494 18.7449 1.07716 18.7281 1.15616 18.6953C1.23516 18.6626 1.30694 18.6147 1.3674 18.5542L9.50074 10.4209L17.6335 18.5537C17.694 18.6141 17.7658 18.6621 17.8448 18.6948C17.9238 18.7276 18.0085 18.7444 18.094 18.7444C18.1795 18.7444 18.2641 18.7276 18.3431 18.6948C18.4221 18.6621 18.4939 18.6141 18.5544 18.5537C18.6148 18.4932 18.6628 18.4214 18.6955 18.3424C18.7283 18.2634 18.7451 18.1788 18.7451 18.0933C18.7451 18.0078 18.7283 17.9231 18.6955 17.8441C18.6628 17.7651 18.6148 17.6933 18.5544 17.6328L10.4216 9.50003L18.5544 1.3667C18.6178 1.30695 18.6685 1.23508 18.7036 1.15536C18.7387 1.07563 18.7575 0.989675 18.7588 0.902574C18.76 0.815473 18.7438 0.729001 18.7111 0.648278C18.6783 0.567556 18.6297 0.494225 18.5681 0.432629C18.5065 0.371033 18.4332 0.322425 18.3525 0.289683C18.2718 0.256941 18.1853 0.240731 18.0982 0.242014C18.0111 0.243297 17.9251 0.262046 17.8454 0.297152C17.7657 0.332257 17.6938 0.383005 17.6341 0.446388L9.50074 8.5792L1.3674 0.445867Z" fill="#1E3A2B"/>
+			</svg>
+			
+			</button>
+		<Logo color/>
+		<HeaderLink class="text-medium text-xl active-link link" href="/">Inicio</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/blog">Proyectos</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/about">Servicios</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/about">Sobre mí</HeaderLink>
+	</div>
+
+	<div class="mobile-menu__cta">
+		<Button link="#form" type="primary">
+			Contactar
+		</Button>
+	</div>
+</div>
+
+
+<style is:global>
+    .menu-toggle {
+        display: none;
+    }
+	.close-btn{
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		position: relative;
 		top: 24px;
-		z-index: 1;
-		background-color: var(--neutral-0);
-		border-radius: 100px;
-		left: 50%;
-		transform: translateX(-50%);
-		padding: 12px 8px 12px 40px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-height: 80px;
-		width: 1008px;
+		right: -50%;
+		padding: 19.5px 28px;
+		width: 64px;
 	}
-	.nav__logo{
-		fill: #1E3A2B;
-		margin-top: 8px;
-	}
-
-	nav .internal-links a{
-		color: var(--secundary-900);
-		margin: 0 16px;
+	.link{
 		text-decoration: none;
-		font-family: var(--text-medium);
+		color: var(--secundary-900);
+	}
 
+	@media (min-width: 821px){
+		.mobile-menu {
+			display: none;
+		}
+		.mobile-menu.active{
+			display: none;
+		}
 	}
-	nav .internal-links .active{
-		color: var(--secundary-500);
-		font-family: var(--text-semibold);
+
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+        z-index: 100;
+		border: none;
+		padding: 19.5px 28px;
+		border-radius: 100px;
+		background-color: transparent;
+    }
+
+	.navbar-hidden {
+    	opacity: 0;
 	}
-	.internal-links{
-		width: 693px;
+
+    @media (max-width: 820px) {
+        .hamburger-menu {
+            display: block;
+        }
+		.mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -500px;
+        width: 452px;
+        height: 100vh;
+        background: var(--background-50);
+        padding: 80px 40px;
+        transition: 0.3s ease-in-out;
+        display: flex;
+		justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 3;
+    }
+
+    @media (max-width: 575.98px){
+        .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -500px;
+        width: 330px;
+        height: 100vh;
+        background: var(--background-50);
+        padding: 80px 40px;
+        transition: 0.3s ease-in-out;
+        display: flex;
+		justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 3;
+        }
+    }
+	.mobile-menu__links{
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		gap: 40px;
+		margin-top: -80px;
 	}
+	.mobile-menu__cta{
+		max-width: 127px;
+	}
+	.mobile-menu.active{
+		right: -16%;
+		z-index: 3;
+	}
+    }
 
+    .btn-wrapper input{
+        display: none;
+    }
+    @media (min-width: 1024.98px){
+        nav{
+        position: absolute;
+        top: 24px;
+        z-index: 1;
+        background-color: var(--neutral-0);
+        border-radius: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 8px 12px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 80px;
+        width: 1008px;
+        }
+        
+    }
+    @media (max-width: 1024px){
+        nav{
+        position: absolute;
+        top: 24px;
+        z-index: 1;
+        background-color: var(--neutral-0);
+        border-radius: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 8px 12px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 80px;
+        width: 800px;
+        }
+    }
+    @media (max-width: 820px){
+        nav{
+        position: absolute;
+        top: 24px;
+        z-index: 1;
+        background-color: var(--neutral-0);
+        border-radius: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 8px 12px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 80px;
+        width: 620px;
+        }
 
+        .btn-wrapper{
+            display: flex;
+        }
+    }
 
+    @media (max-width: 575.98px){
+        nav{
+        position: absolute;
+        top: 24px;
+        z-index: 1;
+        background-color: var(--neutral-0);
+        border-radius: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 8px 12px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 80px;
+        width: 312px;
+        }
+    }
+
+    .nav__logo{
+        fill: #1E3A2B;
+        margin-top: 8px;
+    }
+
+    nav .internal-links a{
+        color: var(--secundary-900);
+        margin: 0 16px;
+        text-decoration: none;
+        font-family: var(--text-medium);
+
+    }
+    nav .internal-links .active{
+        color: var(--secundary-500);
+        font-family: var(--text-semibold);
+    }
+    .internal-links{
+        width: 693px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .primary{
+        background-color: var(--primary-200);
+        border-radius: 100px;
+        padding: 19.5px 28px;
+        text-decoration: none;
+        color: var(--secundary-700);
+        transition: all .3s ease;
+        font-size: 1.125rem;
+    }
 
 </style>

@@ -5,9 +5,9 @@ import heroImage from '../assets/character-1.png';
 
 <header class="hero">
     <div class="hero__text">
-        <h1 class="title">Hola!</h1>
-        <p class="text-center text-3xl text-semibold">Soy Jormary Llinas</p>
-        <h2 class="text-center text-5xl text-light">UX/UI Designer & Web Designer</h2>
+        <h1 class="title ">Hola!</h1>
+        <p class="text-center text-3xl xs-text-lg text-semibold">Soy Jormary Llinas</p>
+        <h2 class="text-center text-5xl xs-text-2xl text-light">UX/UI Designer & Web Designer</h2>
     </div>
     <Image class="hero__img" src={heroImage} alt="Hero" height="520" />
 </header>
@@ -19,9 +19,22 @@ import heroImage from '../assets/character-1.png';
         background-position: bottom;
         background-size: cover;
         position: relative;
-        height: 732px;
+        height: 750px;
         display: grid;
         place-items: center;
+    }
+    @media (max-width: 575.98px){
+        .hero{
+        background-color: var(--background-50);
+        background-image: url("../assets/hero-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        position: relative;
+        height: 720px;
+        display: grid;
+        place-items: center;
+        }
     }
     .title{
         font-family: 'Pacifico-Regular', sans-serif;
@@ -29,6 +42,15 @@ import heroImage from '../assets/character-1.png';
         text-align: center;
         font-weight: 400;
         line-height: 1.3;
+    }
+    @media (max-width: 575.98px){
+        .title{
+        font-family: 'Pacifico-Regular', sans-serif;
+        font-size: 6.125rem;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.4;
+        }
     }
     .hero-text .title,h1,p,h2{
         color: var(--secundary-700);
@@ -38,4 +60,30 @@ import heroImage from '../assets/character-1.png';
         bottom: 0;
         right: 0;
     }
+    @media (max-width: 1024px){
+        .hero__img{
+        position: absolute;
+        bottom: -24px;
+        right: -112px;
+        }
+    }
+    @media (max-width: 820px){
+        .hero__img{
+        position: absolute;
+        bottom: -16px;
+        right: 0px;
+        height: 300px;
+        width: auto;
+        }
+    }
+    @media (max-width: 575.98px){
+        .hero__img{
+        position: absolute;
+        bottom: -16px;
+        right: -30%;
+        height: 300px;
+        width: auto;
+        }
+    }
+
 </style>

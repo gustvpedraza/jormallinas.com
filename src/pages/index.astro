@@ -16,9 +16,9 @@ import Contact from '../components/Contact.astro';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="body">
 		<div class="header-wrapper relative">
-			<Nav />
+			<Nav/>
 			<Hero/>
 		</div>
 		<Main />
@@ -29,5 +29,54 @@ import Contact from '../components/Contact.astro';
 		<Footer />
 	</body>
 </html>
+
+  <style is:global>
+	body {
+		background-color: var(--background-50);
+		max-width: 1920px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 2;
+	}
+	.header-wrapper{
+		overflow: hidden;
+	}
+	.lightbox::after{
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: #1E3A2B;
+		opacity: .8;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+	}
+</style>
+<script is:inline>
+
+	const hamburger = document.querySelector('.hamburger-menu');
+	const close = document.querySelector('.close-btn');
+	const menu = document.querySelector('.mobile-menu');
+	const body = document.querySelector('.body');
+
+	function toggleMenu() {
+		menu.classList.toggle('active');
+		hamburger.classList.toggle('primary');
+		hamburger.classList.toggle('on');
+		body.classList.toggle('lightbox');
+	}
+
+	hamburger.addEventListener('click', toggleMenu);
+	close.addEventListener('click', toggleMenu);
+
+	document.addEventListener('click', (e) => {
+		if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+			toggleMenu();
+		}
+	});
+  
+  </script>
 
 

@@ -10,7 +10,7 @@ import instagram from '../assets/instagram.png';
 <footer class="footer">
 	<div class="footer__brand">
 		<Logo />
-		<p class="text-base text-regular slogan">
+		<p class="text-base text-light slogan">
 			La esencia del diseño.
 			<br>
 			La fuerza de los detalles.
@@ -79,6 +79,20 @@ import instagram from '../assets/instagram.png';
 		display: flex;
 		justify-content: space-between;
 	}
+
+	@media (max-width: 1440px){
+		.footer{
+			padding: 118px 112px;
+			gap: 48px;
+		}
+	}
+	@media (max-width: 575.98px){
+		.footer{
+			flex-direction: column-reverse;
+			padding: 58px 24px;
+		}
+	}
+
 	.footer__brand .slogan{
 		color: var(--background-200);
 		margin-top: 16px;

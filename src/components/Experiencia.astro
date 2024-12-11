@@ -2,79 +2,83 @@
 import BulletsTimeline from "./BulletsTimeline.astro";
 ---
 
-<div>
-    <h3 class="text-7xl text-center text-semibold">Experiencia</h3>
-</div>
-<div class="timeline">
-    <div class="timeline-item">
-        <div class="job-title">
-            <h4 class="text-3xl text-medium">
-                UX/UI Designer <br> Web Designer
-            </h4>
-        </div>
-        <div class="bullets-container">
-            <BulletsTimeline color="accent" />
-        </div>
-        <div class="job-description">
-            <div>
-                <h4 class="text-3xl text-medium">
-                    Independiente
+<div class="experience-wrapper">
+    <div>
+        <h3 class="text-7xl sm-text-4xl xs-text-3xl text-center text-semibold">Experiencia</h3>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="job-title">
+                <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                    UX/UI Designer <br> Web Designer
                 </h4>
-                <h5 class="text-2xl text-light">
-                    Ago. 2022 - Actual
-                </h5>
+            </div>
+            <div class="bullets-container">
+                <BulletsTimeline color="accent" />
+            </div>
+            <div class="job-description">
+                <div>
+                    <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                        Independiente
+                    </h4>
+                    <h5 class="text-2xl xs-text-base text-light">
+                        Ago. 2022 - Actual
+                    </h5>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="timeline-item">
-        <div class="job-title">
-            <h4 class="text-3xl text-medium">
-                UX/UI Designer
-            </h4>
-        </div>
-        <div class="bullets-container">
-            <BulletsTimeline color="secondary" />
-        </div>
-        <div class="job-description">
-            <div>
-                <h4 class="text-3xl text-medium">
-                    Bolsiyo App
+        <div class="timeline-item">
+            <div class="job-title">
+                <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                    UX/UI Designer
                 </h4>
-                <h5 class="text-2xl text-light">
-                    Abr. 2023 - Jul. 2024
-                </h5>
+            </div>
+            <div class="bullets-container">
+                <BulletsTimeline color="secondary" />
+            </div>
+            <div class="job-description">
+                <div>
+                    <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                        Bolsiyo App
+                    </h4>
+                    <h5 class="text-2xl xs-text-base text-light">
+                        Abr. 2023 - Jul. 2024
+                    </h5>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="timeline-item">
-        <div class="job-title">
-            <h4 class="text-3xl text-medium">
-                Digital Designer
-            </h4>
-        </div>
-        <div class="bullets-container">
-            <BulletsTimeline color="tertiary" />
-        </div>
-        <div class="job-description">
-            <div>
-                <h4 class="text-3xl text-medium">
-                    Independiente
+        <div class="timeline-item">
+            <div class="job-title">
+                <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                    Digital Designer
                 </h4>
-                <h5 class="text-2xl text-light">
-                    Ene. 2019 - Dic. 2021
-                </h5>
+            </div>
+            <div class="bullets-container">
+                <BulletsTimeline color="tertiary" />
+            </div>
+            <div class="job-description">
+                <div>
+                    <h4 class="text-3xl sm-text-xl xs-text-base text-medium">
+                        Independiente
+                    </h4>
+                    <h5 class="text-2xl xs-text-base text-light">
+                        Ene. 2019 - Dic. 2021
+                    </h5>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
+    .experience-wrapper{
+        background-color: var(--neutral-0);
+    }
     h3 {
         color: var(--secundary-700);
         margin-bottom: 24px;
     }
     .timeline{
-        height: 454px;
     }
     .timeline-item {
         display: flex;
@@ -82,8 +86,21 @@ import BulletsTimeline from "./BulletsTimeline.astro";
         align-items: center;
         gap: 42px;
         margin: 0 auto;
-        margin-bottom: 128px;
+        padding-bottom: 118px;
     }
+
+    @media (max-width: 575.98px){
+        .timeline-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin: 0 auto;
+        padding-bottom: 120px;
+        max-width: 390px;
+        }
+    }
+
     .job-title, .job-description{
         color: var(--secundary-900);
     }

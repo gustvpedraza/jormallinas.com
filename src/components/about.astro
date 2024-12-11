@@ -3,38 +3,69 @@ import { Image } from 'astro:assets'
 import jorImage from '../assets/jorma-photo.png';
 ---
 
-<section class="about">
-    <div class="about__wrapper">
-        <div class="about__content">
-            <h3 class="text-8xl text-light about__title">
-                <b class="text-semibold">Más</b> sobre mí
-            </h3>
-            <p class="text-light text-2xl">
-                ¡Hola, un placer! Soy Jormary Llinas, pero puedes llamarme Jorma. Soy <b class="text-medium">diseñadora web y UX/UI</b>, amo lo que hago: transformar ideas en experiencias digitales que conectan con las personas. Para mí, el diseño es más que crear algo lindo; es resolver retos, contar historias y generar impacto.
-            </p>
-            <p class="text-light text-2xl">
-                <b class="text-medium">Mi curiosidad y atención a los detalles me permiten encontrar soluciones únicas que equilibran funcionalidad, estética y propósito</b>. Cada proyecto es una oportunidad para diseñar algo que no solo se vea bien, sino que realmente marque la diferencia en la vida de los usuarios.
-            </p>
-            <p class="text-light text-2xl">
-                Hoy, deposito todo este conocimiento al servicio de quienes buscan más que diseño: experiencias que funcionan, comunican y transforman.
-            </p>
+<div class="about-wrapper">
+    <section class="about">
+        <div class="about__wrapper">
+            <div class="about__content">
+                <h3 class="text-8xl sm-text-6xl xs-text-4xl text-light about__title">
+                    <b class="text-semibold">Más</b> sobre mí
+                </h3>
+                <p class="text-light text-2xl xs-text-lg">
+                    ¡Hola, un placer! Soy Jormary Llinas, pero puedes llamarme Jorma. Soy <b class="text-medium">diseñadora web y UX/UI</b>, amo lo que hago: transformar ideas en experiencias digitales que conectan con las personas. Para mí, el diseño es más que crear algo lindo; es resolver retos, contar historias y generar impacto.
+                </p>
+                <p class="text-light text-2xl xs-text-lg">
+                    <b class="text-medium">Mi curiosidad y atención a los detalles me permiten encontrar soluciones únicas que equilibran funcionalidad, estética y propósito</b>. Cada proyecto es una oportunidad para diseñar algo que no solo se vea bien, sino que realmente marque la diferencia en la vida de los usuarios.
+                </p>
+                <p class="text-light text-2xl xs-text-lg">
+                    Hoy, deposito todo este conocimiento al servicio de quienes buscan más que diseño: experiencias que funcionan, comunican y transforman.
+                </p>
+            </div>
+            <div>
+                <Image class="hero__img" src={jorImage} alt="Hero" width="371" />
+            </div>
         </div>
-        <div>
-            <Image class="hero__img" src={jorImage} alt="Hero" width="371" />
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 <style>
+    .about-wrapper{
+        background-color: var(--neutral-0);
+    }
     .about{
         max-width: 1696px;
-        margin: 118px 112px calc(80px - 24px);
-
+        padding: 118px 112px calc(80px - 24px);
     }
     .about__wrapper{
         display: grid;
         grid-template-columns: 668px 372px;
         gap: 72px;
         padding: 0 292px;
+    }
+    @media (max-width: 1440.98px){
+    .about__wrapper{
+        grid-template-columns: 668px 372px;
+        padding: 0 112px;
+        }
+    }
+    @media (max-width: 1367px){
+        .about{
+            padding: 118px 0;
+        }
+    .about__wrapper{
+        grid-template-columns: 1fr;
+        padding: 0 112px;
+        place-items: center;
+        }
+    }
+
+    @media (max-width: 820px){
+        .about{
+        padding: 0;
+    }
+    .about__wrapper{
+        grid-template-columns: 596px;
+        padding: 118px 112px;
+        place-items: center;
+        }
     }
     .about__title{
         color: var(--secundary-700);
@@ -46,5 +77,16 @@ import jorImage from '../assets/jorma-photo.png';
     }
     .about__img{
       width: 371px;
+    }
+    @media (max-width: 575.98px){
+        .about__wrapper{
+            grid-template-columns: 1fr;
+            padding: 58px 24px;
+            place-items: center;
+            gap: 36px;
+        }
+        .hero__img{
+            width: 188px;
+        }
     }
 </style>
