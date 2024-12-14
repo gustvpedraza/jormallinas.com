@@ -11,7 +11,7 @@ const { link, type = 'primary'  } = Astro.props;
     <slot />
 </a>
 
-<style>
+<style is:global>
     a{
         font-family: var(--text-medium), sans-serif;
         font-weight: 500;
@@ -68,6 +68,7 @@ const { link, type = 'primary'  } = Astro.props;
         text-decoration: none;
         color: var(--neutral-400);
         transition: all .3s ease;
+        fill: var(--neutral-400);
     }
     .tertiary{
         background-color: var(--secundary-700);

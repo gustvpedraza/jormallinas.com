@@ -13,6 +13,12 @@ const proyectos = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		titleHeader: z.string(),
+		imgHeader: z.string(),
+		empresa: z.string(),
+		rol: z.string(),
+		tiempo: z.string(),
+		categoria: z.string(),
 	}),
 });
 

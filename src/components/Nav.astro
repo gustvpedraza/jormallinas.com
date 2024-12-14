@@ -12,10 +12,10 @@ import Logo from './Logo.astro';
         </svg>
 	</button>
     <div class="internal-links sm-none">
-        <HeaderLink class="text-xl active sm-none" href="/">Inicio</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/blog">Proyectos</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/about">Servicios</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/about">Sobre mí</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/">Inicio</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#proyectos">Proyectos</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#servicios">Servicios</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#sobremi">Sobre mí</HeaderLink>
     </div>
 
     <div class="btn-wrapper sm-none">
@@ -236,7 +236,101 @@ import Logo from './Logo.astro';
     nav .internal-links .active{
         color: var(--secundary-500);
         font-family: var(--text-semibold);
+        position: relative;
+        text-decoration: none;
     }
+
+    nav .internal-links a{
+        position: relative;
+    }
+
+    
+    nav .internal-links .active::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 40px);
+        height: calc(100% + 16px);
+        background-image: url('/doodle-active-link.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    nav .internal-links :nth-child(1):hover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 48px);
+        height: calc(100% + 16px);
+        background-image: url('/doodle-hover-link.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    nav .internal-links :nth-child(2):hover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        background-image: url('/doodle-hover-curve.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+    nav .internal-links :nth-child(3):hover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 48px);
+        height: calc(100% + 16px);
+        background-image: url('/doodle-hover-link.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    nav .internal-links :nth-child(4):hover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+        width: calc(100% + 32px);
+        height: calc(100% + 16px);
+        background-image: url('/doodle-hover-doble.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+
+
     .internal-links{
         width: 693px;
         display: flex;

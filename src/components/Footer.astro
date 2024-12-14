@@ -39,15 +39,15 @@ import instagram from '../assets/instagram.png';
 	</div>
 	<div class="footer__links">
 		<h5 class="footer__title text-lg text-semibold">Links</h5>
-		<p class="text-base text-light">
+		<a href="#proyectos" class="text-base text-light">
 			Proyectos
-		</p>
-		<p class="text-base text-light">
+		</a>
+		<a href="#servicios" class="text-base text-light">
 			Servicios
-		</p>
-		<p class="text-base text-light">
+		</a>
+		<a href="#sobremi" class="text-base text-light">
 			Sobre mí
-		</p>
+		</a>
 	</div>
 	<div class="footer__social">
 		<h5 class="footer__title text-lg text-semibold">
@@ -111,9 +111,10 @@ import instagram from '../assets/instagram.png';
 		margin-bottom: 42px;
 	}
 
-	.footer__services p, .footer__links p{
+	.footer__services p, .footer__links a{
 		color: var(--background-50);
 		margin-bottom: 20px;
+		display: block;
 	}
 
 	.footer-icons{
@@ -136,6 +137,15 @@ import instagram from '../assets/instagram.png';
 	.footer-icons i:hover{
 		background-color: var(--tertiary-200);
 		transition: all 0.3s ease;
+	}
+
+	@media (max-width: 575.98px){
+		.footer__services{
+			order: 2;
+		}
+		.footer__links{
+			order: 1;
+		}
 	}
 
 </style>

@@ -5,7 +5,9 @@ const posts = (await getCollection('proyectos')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
-<main class="main">
+<main class="main" id="proyectos">
+
+
     <h3 class="main__title text-8xl sm-text-6xl xs-text-4xl text-light text-center">
         Proyectos <b class="text-semibold">destacados</b>
     </h3>
@@ -26,7 +28,7 @@ const posts = (await getCollection('proyectos')).sort(
                 posts.map((post) => (
                         <li>
                             <a href={`/proyectos/${post.id}/`}>
-                                <img width={584} height={524} src={post.data.heroImage} alt="" />
+                                <img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
                             </a>
                             <div class="projects__card-content">
                                 <div>
@@ -37,7 +39,7 @@ const posts = (await getCollection('proyectos')).sort(
                                     </h4>
                                 </div>
                                 <div class="button-wrapper">
-                                    <Button link="#form" type="secundary">
+                                    <Button link={`/proyectos/${post.id}/`} type="secundary">
                                         <i class="projects__icon">
                                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z"/>
@@ -46,9 +48,32 @@ const posts = (await getCollection('proyectos')).sort(
                                     </Button>
                                 </div>
                             </div>
+                            
                         </li>
+              
                 ))
             }
+            <li>
+                <img width={584} height={524} src="/coming-thumbnail.jpg" alt="Próximamente Disponible" />
+                <div class="projects__card-content">
+                    <div>
+                        <h5 class="projects__label text-xl xs-text-base text-medium">Web</h5>
+                        <h4 class="projects__title text-4xl xs-text-2xl text-light">
+                            <b class="text-bold">Próximamente</b>
+                            <span>Disponible</span>
+                        </h4>
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="secundary" disabled>
+                            <i class="projects__icon disabled">
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z" fill="#ffffff"/>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </li>
         </ul>
     </section>
 </main>
@@ -144,6 +169,12 @@ const posts = (await getCollection('proyectos')).sort(
         fill: var(--secundary-700);
         transition: all .3s ease;
     }
+
+    i.disabled svg path{
+        fill: var(--neutral-400) !important;
+        transition: all .3s ease;
+    }
+
 
     .button-wrapper:hover i svg path{
         fill: var(--secundary-900);

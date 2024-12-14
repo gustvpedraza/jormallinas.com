@@ -1,0 +1,29 @@
+---
+interface Props {
+    title: string;
+    description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<div class="card">
+    <h3 class="text-base text-medium">{title}</h3>
+    <h3 class="text-base text-light">{description}</h3>
+</div>
+
+<style is:global>
+    .card{
+       padding: 16px; 
+       border: 1px solid var(--background-200);
+       border-radius: 16px;
+       width: 190px;
+    }
+    @media (max-width: 1440px){
+        .card{
+            width: 148px;
+        }
+    }
+    .card h3{
+        color: var(--secundary-900);
+    }
+</style>
