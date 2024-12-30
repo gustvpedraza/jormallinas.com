@@ -36,6 +36,9 @@ const { link, type = 'primary'  } = Astro.props;
         color: var(--secundary-700);
         transition: all .3s ease;
         font-size: 1.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .primary:hover{
         background-color: var(--secundary-900);
@@ -114,7 +117,7 @@ const { link, type = 'primary'  } = Astro.props;
         margin-left: 2px;
         margin-right: 2px;
         position: relative;
-        top: 2px;
+        top: -2px;
     }
     i svg path{
         fill: var(--secundary-700);

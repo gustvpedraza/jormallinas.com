@@ -16,7 +16,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
         <BaseHead title={title} description={description} />
     </head>
 
-    <body>
+    <body class="body body-inner">
         <Header />
         <header class="project-post-header">
 			<div class="post-header-wrapper">
@@ -63,6 +63,9 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 </html>
 
 <style is:global>
+	.body-inner{
+		background-color: var(--background-50);
+	}
     .project-post-header {
         background-color: var(--background-100);
 		height: 600px;
@@ -70,7 +73,14 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		flex-direction: column;
 		justify-content: center;
 		padding: 80px 0px 0px;
+		border-radius: 0 0 64px 64px;
     }
+
+	@media (max-width: 575.98px){
+		.project-post-header{
+			border-radius: 0 0 24px 24px;
+		}
+	}
 
 	@media (max-width: 1440px){
 		.project-post-header{
@@ -143,7 +153,8 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 	}
 	@media (max-width: 575.98px){
 		.project-post__hero{
-			height: auto
+			height: auto;
+			gap: 24px;
 		}
 	}
 
@@ -234,9 +245,16 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		padding: 62px 50px;
 
 	}
+	@media (max-width: 820px){
+		.project-container{
+		margin: 0 auto;
+		padding: 62px 100px;
+
+		}
+	}
 	@media (max-width: 575.98px){
 		.project-container{
-		padding: 62px 24px 0;
+		padding: 42px 24px 0;
 		}
 	}
 
@@ -340,10 +358,12 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		margin-left: -48px;
 	}
 
+
 	@media (max-width: 575.98px){
 		.image-content-b-3 img{
-		margin: 16px auto
+			margin: 16px auto;
 		}
+
 	}
 
 
@@ -402,6 +422,15 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		grid-template-columns: repeat(3, 1fr);
 	}
 
+	@media (max-width: 575.98px){
+		.cards-proyect-container{
+		display: grid;
+		grid-template-columns: 1fr;
+		place-items: center;
+		gap: 16px;
+		}
+	}
+
 	.cards-proyect-container .card h3{
 		font-size: var(--text-base);
 		font-family: var(--text-light);
@@ -443,7 +472,25 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		text-align: center;
 	}
 
+	.project-timeline-container__card ul{
+		padding-left: 16px;
+	}
+
+	.lightbox::after{
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: #1E3A2B;
+		opacity: .8;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+	}
+
 </style>
+
 <script is:inline>
 
 	const hamburger = document.querySelector('.hamburger-menu');

@@ -3,20 +3,20 @@ import { Image } from 'astro:assets'
 import jorImage from '../assets/jorma-photo.png';
 ---
 
-<div class="about-wrapper" id="sobremi">
-    <section class="about">
+<div class="about-wrapper" >
+    <section class="about" id="sobremi">
         <div class="about__wrapper">
             <div class="about__content">
                 <h3 class="text-8xl sm-text-6xl xs-text-4xl text-light about__title">
                     <b class="text-semibold">Más</b> sobre mí
                 </h3>
-                <p class="text-light text-2xl xs-text-lg">
+                <p class="text-light text-2xl sm-text-xl xs-text-lg">
                     ¡Hola, un placer! Soy Jormary Llinas, pero puedes llamarme Jorma. Soy <b class="text-medium">diseñadora web y UX/UI</b>, amo lo que hago: transformar ideas en experiencias digitales que conectan con las personas. Para mí, el diseño es más que crear algo lindo; es resolver retos, contar historias y generar impacto.
                 </p>
-                <p class="text-light text-2xl xs-text-lg">
+                <p class="text-light text-2xl sm-text-xl xs-text-lg">
                     <b class="text-medium">Mi curiosidad y atención a los detalles me permiten encontrar soluciones únicas que equilibran funcionalidad, estética y propósito</b>. Cada proyecto es una oportunidad para diseñar algo que no solo se vea bien, sino que realmente marque la diferencia en la vida de los usuarios.
                 </p>
-                <p class="text-light text-2xl xs-text-lg">
+                <p class="text-light text-2xl sm-text-xl xs-text-lg">
                     Hoy, deposito todo este conocimiento al servicio de quienes buscan más que diseño: experiencias que funcionan, comunican y transforman.
                 </p>
             </div>
@@ -81,9 +81,9 @@ import jorImage from '../assets/jorma-photo.png';
     @media (max-width: 575.98px){
         .about__wrapper{
             grid-template-columns: 1fr;
-            padding: 58px 24px;
+            padding: 58px 24px 40px;
             place-items: center;
-            gap: 36px;
+            gap: 0;
         }
         .hero__img{
             width: 188px;

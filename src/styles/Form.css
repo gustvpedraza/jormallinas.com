@@ -1,0 +1,176 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-bottom: 4px;
+    font-size: var(--text-base);
+    font-family: var(--text-regular);
+    color: var(--neutral-600);
+}
+label span{
+    color: var(--accent-500);
+}
+input{
+    margin-bottom: 16px;
+    height: 64px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--background-300);
+    font-size: var(--text-base);
+    font-family: var(--text-regular);
+    color: var(--neutral-300);
+}
+input::placeholder{
+    color: var(--neutral-300);
+}
+
+input::focus, textarea::focus{
+    outline: none;
+    border: 2px solid var(--primary-300);
+}
+input:focus-visible, textarea:focus-visible{
+    outline: none;
+    border: 2px solid var(--primary-300);
+}
+
+textarea{
+    margin-bottom: 16px;
+    height: 200px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--background-300);
+    font-size: var(--text-base);
+    font-family: var(--text-regular);
+    color: var(--neutral-300);
+}
+textarea::placeholder{
+    color: var(--neutral-300);
+}
+
+.error-message{
+    color: var(--accent-500);
+    font-family: var(--text-regular);
+    font-size: var(--text-base);
+    margin-top: -12px;
+    margin-bottom: 16px;
+}
+
+.input-error{
+    border: 2px solid var(--accent-500);
+}
+
+
+
+button{
+    font-family: var(--text-medium), sans-serif;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    border: none;
+    width: 195px;
+}
+button:hover{
+    cursor: pointer;
+}
+.primary{
+    background-color: var(--primary-200);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--secundary-700);
+    transition: all .3s ease;
+    font-size: 1.125rem;
+}
+.primary:hover{
+    background-color: var(--secundary-900);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--background-50);
+    transition: all .3s ease;
+}
+.primary:disabled{
+    background-color: var(--neutral-100);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--neutral-500);
+    transition: all .3s ease;
+}
+.secundary{
+    background-color: transparent;
+    border-radius: 100px;
+    border: 2px solid var(--primary-100);
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--secundary-700);
+    transition: all .3s ease;
+}
+.secundary:hover{
+    background-color: transparent;
+    border-radius: 100px;
+    border: 2px solid var(--secundary-900);
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--secundary-900);
+    transition: all .3s ease;
+}
+
+.secundary:disabled{
+    background-color: transparent;
+    border-radius: 100px;
+    border: 2px solid var(--neutral-200);
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--neutral-400);
+    transition: all .3s ease;
+}
+.tertiary{
+    background-color: var(--secundary-700);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--background-50);
+    transition: all .3s ease;
+}
+.tertiary:hover{
+    background-color: var(--secundary-950);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--background-50);
+    transition: all .3s ease;
+}
+.tertiary:disabled{
+    background-color: var(--neutral-100);
+    border-radius: 100px;
+    padding: 19.5px 28px;
+    text-decoration: none;
+    color: var(--neutral-500);
+    transition: all .3s ease;
+}
+
+.projects__icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    position: relative;
+    top: -2px;
+}
+form button i svg path{
+    fill: var(--secundary-700);
+    transition: all .3s ease;
+}
+
+form button:hover i svg path{
+    fill: var(--background-50);
+    transition: all .3s ease;
+}
+
+form button:disabled i svg path{
+    fill: var(--neutral-500);
+    transition: all .3s ease;
+}

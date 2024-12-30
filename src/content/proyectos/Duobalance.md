@@ -17,10 +17,11 @@ type: 'Mobile App'
   ## El problema
 
  Las personas que gestionan sus finanzas personales y familiares enfrentan dificultades por la falta de herramientas integradas que simplifiquen el proceso y ofrezcan una visión clara y consolidada de sus cuentas.
-
-
+<br><br>
+ ## Objetivos
   <div class="image-content-b-2">
-    <img class="" src="/duoapp-objetivos.png" alt="duoapp-objetivos">
+    <div class="desktop"> <img class="" src="/duoapp-objetivos.png" alt="duoapp-objetivos"> </div>
+    <div class="mobile"> <img class="" src="/duoapp-objetivos-mobile.png" alt="duoapp-objetivos"> </div>
   </div>
    <br> 
 
@@ -130,8 +131,11 @@ type: 'Mobile App'
  
  
    <div class="image-content-b-2">
-     <img class="" src="/duoapp-research.png" alt="duoapp-research">
+     <div class="desktop"> <img class="" src="/duoapp-research.png" alt="duoapp-research"> </div>
+     <div class="mobile"> <img class="" src="/duoapp-research-mobile.png" alt="duoapp-research"> </div>
    </div>
+
+  <br>
 
    Como resultado de esta fase, desarrollé un perfil de usuario detallado (User Persona) y un mapa del viaje del usuario (Journey Map) que reflejan las diferentes experiencias y desafíos que enfrentan. Estos elementos proporcionan una visión integral de las necesidades y expectativas en la gestión de finanzas.
 
@@ -159,9 +163,10 @@ type: 'Mobile App'
   <br><br>
 
    ## Insights
-
+  <br>
    <div class="image-content-b-2">
-     <img class="" src="/duoapp-insights.png" alt="duoapp-insights">
+     <div class="desktop"> <img class="m-0" src="/duoapp-insights.png" alt="duoapp-insights"> </div>
+     <div class="mobile"> <img class="m-0" src="/duoapp-insights-mobile.png" alt="duoapp-insights"> </div>
    </div>
 
    <br><br>
@@ -188,17 +193,18 @@ type: 'Mobile App'
    ## Pruebas de usabilidad
 
   <div class="image-content-b-2">
-     <img class="" src="/duoapp-usabilidad.png" alt="duoapp-usabilidad">
+     <div class="desktop"> <img class="mt-0 mb-40" src="/duoapp-usabilidad.png" alt="duoapp-usabilidad"> </div>
+     <div class="mobile"> <img class="mt-0 mb-40" src="/duoapp-usabilidad-mobile.png" alt="duoapp-usabilidad"> </div>
    </div>
   <div class="image-content-b-2">
-     <img class="" src="/duoapp-journey.png" alt="duoapp-journey">
+     <img class="mt-0 mb-40" src="/duoapp-journey.png" alt="duoapp-journey">
    </div>
 
 
   <h2 class="text-6xl text-medium text-center mt-72">
      Decisiones de diseño
   </h2>
-  <div class="col-2-section mt-24 content-50">
+  <div class="col-2-section mt-24 content-50 xs-reverse">
     <div class="image-content-l">
       <img class="size-326px" src="/cornershop-decision-1.png" alt="cornershop-decision-1">
     </div>
@@ -237,7 +243,7 @@ type: 'Mobile App'
 
   ### Colors
 
-  <br><br> 
+  <br>
  <div class="image-content-l mb-24">
       <img class="w-100" src="/duoapp-colors-primary.png" alt="duoapp-colors-primary">
   </div>

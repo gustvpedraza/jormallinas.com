@@ -5,17 +5,19 @@ import Logo from './Logo.astro';
 ---
 
 <nav class="">
-    <Logo color/>
-	<button class="hamburger-menu primary" id="menu-toggle">
+    <a href="/" class="flex">
+        <Logo color/>
+    </a>
+	<button class="hamburger-menu primary-burger" id="menu-toggle" style="width: 85px">
 		<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.90625 1.3125H18.0938M0.90625 6H18.0938M0.90625 10.6875H18.0938" stroke="#1E3A2B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
         </svg>
 	</button>
     <div class="internal-links sm-none">
-        <HeaderLink class="text-xl sm-none" href="/">Inicio</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/#proyectos">Proyectos</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/#servicios">Servicios</HeaderLink>
-        <HeaderLink class="text-xl sm-none" href="/#sobremi">Sobre mí</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/" data-section="inicio">Inicio</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#proyectos" data-section="proyectos">Proyectos</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#servicios" data-section="servicios">Servicios</HeaderLink>
+        <HeaderLink class="text-xl sm-none" href="/#sobremi" data-section="sobremi">Sobre mí</HeaderLink>
     </div>
 
     <div class="btn-wrapper sm-none">
@@ -35,10 +37,10 @@ import Logo from './Logo.astro';
 			
 			</button>
 		<Logo color/>
-		<HeaderLink class="text-medium text-xl active-link link" href="/">Inicio</HeaderLink>
-		<HeaderLink class="text-medium text-xl link" href="/blog">Proyectos</HeaderLink>
-		<HeaderLink class="text-medium text-xl link" href="/about">Servicios</HeaderLink>
-		<HeaderLink class="text-medium text-xl link" href="/about">Sobre mí</HeaderLink>
+		<HeaderLink class="text-medium text-xl link first-child" href="/" data-section="inicio">Inicio</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/#proyectos" data-section="proyectos">Proyectos</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/#servicios" data-section="servicios">Servicios</HeaderLink>
+		<HeaderLink class="text-medium text-xl link" href="/#sobremi" data-section="sobremi">Sobre mí</HeaderLink>
 	</div>
 
 	<div class="mobile-menu__cta">
@@ -48,6 +50,69 @@ import Logo from './Logo.astro';
 	</div>
 </div>
 
+<script>
+  // Configuración del Intersection Observer
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px',
+    threshold: 0
+  };
+
+  // Obtener todas las secciones y enlaces
+  const sections = document.querySelectorAll('section[id]');
+  const desktopLinks = document.querySelectorAll('.internal-links [data-section]');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__links [data-section]');
+
+  // Función para actualizar las clases active
+  function updateActiveLink(sectionId) {
+    // Actualizar enlaces desktop
+    desktopLinks.forEach(link => {
+      if (link.getAttribute('data-section') === sectionId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Actualizar enlaces mobile
+    mobileLinks.forEach(link => {
+      if (link.getAttribute('data-section') === sectionId) {
+        link.classList.add('active-link');
+      } else {
+        link.classList.remove('active-link');
+      }
+    });
+  }
+
+  // Callback para el observer
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        updateActiveLink(sectionId);
+      }
+    });
+  };
+
+  // Crear y activar el observer
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  // Observar cada sección
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Manejar el caso cuando estamos en la parte superior de la página
+  function checkInitialPosition() {
+    if (window.scrollY === 0) {
+      updateActiveLink('inicio');
+    }
+  }
+
+  // Verificar la posición inicial y escuchar eventos de scroll
+  checkInitialPosition();
+  window.addEventListener('scroll', checkInitialPosition);
+</script>
 
 <style is:global>
     .menu-toggle {
@@ -155,11 +220,11 @@ import Logo from './Logo.astro';
         border-radius: 100px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 8px 12px 40px;
+        padding: 8px 8px 8px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-height: 80px;
+        height: 80px;
         width: 1008px;
         }
         
@@ -173,11 +238,11 @@ import Logo from './Logo.astro';
         border-radius: 100px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 8px 12px 40px;
+        padding: 8px 8px 8px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-height: 80px;
+        height: 80px;
         width: 800px;
         }
     }
@@ -190,11 +255,11 @@ import Logo from './Logo.astro';
         border-radius: 100px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 8px 12px 40px;
+        padding: 8px 8px 8px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-height: 80px;
+        height: 80px;
         width: 620px;
         }
 
@@ -212,11 +277,11 @@ import Logo from './Logo.astro';
         border-radius: 100px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 8px 12px 40px;
+        padding: 8px 8px 8px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-height: 80px;
+        height: 80px;
         width: 312px;
         }
     }
@@ -233,19 +298,25 @@ import Logo from './Logo.astro';
         font-family: var(--text-medium);
 
     }
-    nav .internal-links .active{
-        color: var(--secundary-500);
+    nav .active .mobile-menu__links .active-link{
+        color: var(--secundary-500) !important;
         font-family: var(--text-semibold);
+        font-weight: 600;
         position: relative;
         text-decoration: none;
     }
 
-    nav .internal-links a{
+    nav a.active{
+        color: var(--secundary-500) !important;
+    }
+
+    nav a, .mobile-menu__links a{
         position: relative;
+        text-decoration: none;
     }
 
     
-    nav .internal-links .active::before {
+    nav .active::before, .mobile-menu__links .active-link::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -262,7 +333,32 @@ import Logo from './Logo.astro';
         transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
 
-    nav .internal-links :nth-child(1):hover::before {
+    .mobile-menu__links .active-link::before{
+        transform: translate(-85%, -50%);
+    }
+
+    @media (max-width: 820px){
+        .mobile-menu__links .active-link::before{
+            transform: translate(-90%, -50%);
+        }
+    }
+
+    @media (max-width: 575.98px){
+    	.mobile-menu__links .active-link.first-child::before{
+            transform: translate(-85%, -55%);
+            width: calc(100% + 40px);
+            height: calc(100% + 16px);
+        }
+
+        .mobile-menu__links .active-link::before{
+            transform: translate(-80%, -55%);
+            width: calc(100% + 40px);
+            height: calc(100% + 24px);
+        }
+    }
+
+    @media (min-width: 1200px){
+    	nav .internal-links :nth-child(1):hover::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -328,6 +424,7 @@ import Logo from './Logo.astro';
         pointer-events: none;
         transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
+    }
 
 
 
@@ -337,7 +434,7 @@ import Logo from './Logo.astro';
         justify-content: center;
     }
 
-    .primary{
+    .primary-burger{
         background-color: var(--primary-200);
         border-radius: 100px;
         padding: 19.5px 28px;
@@ -345,6 +442,9 @@ import Logo from './Logo.astro';
         color: var(--secundary-700);
         transition: all .3s ease;
         font-size: 1.125rem;
+        flex-grow: 0;
     }
 
 </style>
+
+

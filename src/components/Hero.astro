@@ -1,32 +1,70 @@
 ---
 import { Image } from 'astro:assets'
 import heroImage from '../assets/character-1.png';
+
 ---
 
-<header class="hero">
-    <div class="hero__text">
-        <h1 class="title ">Hola!</h1>
-        <p class="text-center text-3xl xs-text-lg text-semibold">Soy Jormary Llinas</p>
-        <h2 class="text-center text-5xl xs-text-2xl text-light">UX/UI Designer & Web Designer</h2>
+
+<header class="hero-container">
+    <div class="hero">
+
+        <div class="rellax position-absolute sea" data-rellax-speed="-2" data-rellax-percentage="1">
+            <video src="/videos/Standard_Mode_waterfall__water_moving__wave__s.mp4" loop autoplay muted playsinline></video>
+        </div>
+
+      
+
+     
+
+     
+
+        <div class="rellax position-absolute rocks" data-rellax-speed="-3" data-rellax-percentage="1">
+            <img src="/hero-parallax/Rock.png" alt="rocks">
+        </div>
+
+        <div class="position-absolute bruma">
+            <img src="/hero-parallax/Bruma.png" alt="bruma">
+        </div> 
+
+        <div class="rellax position-absolute text-bruma" data-rellax-speed="8" data-rellax-percentage="1">
+            <img src="/hero-parallax/Text-Bruma.png" alt="text-bruma">
+        </div> 
+
+        <div class="hero__text rellax position-relative" data-rellax-speed="10"
+        data-rellax-percentage="0.5">
+            <canvas id="canvas-saludo"></canvas>
+            <p class="text-center text-3xl sm-text-2xl xs-text-lg text-semibold name">Soy Jormary Llinas</p>
+            <h2 class="text-center text-5xl sm-text-4xl xs-text-2xl text-light">UX/UI Designer & Web Designer</h2>
+        </div>
+
+        <div class="rellax position-absolute rocks" data-rellax-speed="-3" data-rellax-percentage="1">
+            <img src="/hero-parallax/Rock.png" alt="rocks">
+        </div>
+
+        <div class="hero__img rellax" data-rellax-speed="-2" data-rellax-percentage="0.5">
+            <img class="hero-character" src="/character-1.png" alt="hero-character">
+        </div>
+     
     </div>
-    <Image class="hero__img" src={heroImage} alt="Hero" height="520" />
 </header>
+
+
 <style>
     .hero{
-        background-color: var(--background-50);
-        background-image: url("../assets/hero-bg.jpg");
+        background-color: var(--background-200);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: cover;
         position: relative;
-        height: 750px;
+        height: 820px;
         display: grid;
         place-items: center;
+        background-position-y: -250px;
+        overflow: hidden;
     }
     @media (max-width: 575.98px){
         .hero{
         background-color: var(--background-50);
-        background-image: url("../assets/hero-bg.jpg");
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: cover;
@@ -52,6 +90,9 @@ import heroImage from '../assets/character-1.png';
         line-height: 1.4;
         }
     }
+    .name{
+        margin-top: -40px;
+    }
     .hero-text .title,h1,p,h2{
         color: var(--secundary-700);
     }
@@ -59,6 +100,11 @@ import heroImage from '../assets/character-1.png';
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+    @media (max-width: 1440px){
+        .hero__img{
+            bottom: -24px;
+        }
     }
     @media (max-width: 1024px){
         .hero__img{
@@ -80,10 +126,135 @@ import heroImage from '../assets/character-1.png';
         .hero__img{
         position: absolute;
         bottom: -16px;
-        right: -30%;
+        right: -20%;
         height: 300px;
         width: auto;
         }
     }
 
+    #canvas-saludo{
+        width: 500px;
+        height: auto;
+    }
+
+    @media (max-width: 575.98px){
+        #canvas-saludo{
+        width: 320px;
+        height: auto
+        }
+    }
+
+    .position-absolute{
+        position: absolute;
+    }
+
+    .position-relative{
+        position: relative;
+    }
+    .sea{
+        top: -24px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: .2;
+    }
+
+    .sea video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rocks{
+        bottom: -280px;
+        right: 0;
+        opacity: .3;
+    }
+
+    @media (max-width: 575.98px){
+    	.rocks{
+            bottom: -24%;
+        }
+    }
+
+
+    .bruma{
+        bottom: -250px;
+        opacity: .5;
+    }
+    .bruma {
+        animation: wind 25s ease-in-out infinite;
+    }
+
+    @keyframes wind {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(120px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .text-bruma{
+        bottom: -400px;
+    }
+
+    .text-bruma {
+        animation: v-wind 25s ease-in-out infinite;
+    }
+
+    @keyframes v-wind {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(120px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .hero-character{
+        height: 480px;
+    }
+
+    @media (max-width: 575.98px){
+        .hero-character{
+            height: 280px;
+        }
+    }
+
+    @media (max-width: 575.98px){
+    	.hero__text{
+            bottom: 8%;
+        }
+    }
+
+
+
 </style>
+
+<script is:inline src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+<script is:inline>
+        const r = new rive.Rive({
+        src: "/saludo.riv",
+        canvas: document.getElementById("canvas-saludo"),
+        autoplay: true,
+        // artboard: "Arboard", // Optional. If not supplied the default is selected
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          // Ensure the drawing surface matches the canvas size and device pixel ratio
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+</script>
+<script is:inline src="/rellax.min.js"></script>
+<script is:inline>
+     var rellax = new Rellax('.rellax', {
+    center:true
+  });
+</script>

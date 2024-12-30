@@ -12,7 +12,7 @@ categoria: 'Product Design'
 type: 'Mobile App'
 ---
 
-<div class="col-2-section">
+<div class="col-2-section mb-40">
   <div class="image-content-l">
     <img class="size-302px" src="/tarjetas-de-productos.png" alt="tarjetas-de-producto">
   </div>
@@ -86,13 +86,13 @@ type: 'Mobile App'
   <h2 class="text-6xl text-medium text-center mt-72">
      Decisiones de diseño
   </h2>
-  <div class="col-2-section mt-24">
+  <div class="col-2-section mt-24 content-50 xs-reverse">
     <div class="image-content-l">
       <img class="size-326px" src="/unificacion-de-tabs.png" alt="unificacion-de-tabs">
     </div>
   <div class="text-content">
     <h3 class="text-3xl text-medium">
-      Unificación de los tabs <br>
+      Unificación de los tabs <br class="hide-xs">
       "Productos" y "Servicios"
     </h3>
     <p class="text-lg text-regular">
@@ -100,11 +100,11 @@ type: 'Mobile App'
     </p>
   </div>
 </div>
-  <div class="col-2-section mt-56">
+  <div class="col-2-section mt-56 content-50">
   <div class="text-content">
     <h3 class="text-3xl text-medium">
       Optimización del espacio
-      <br >
+      <br class="hide-xs">
       Botón "Cobrar"
     </h3>
     <p class="text-lg text-regular">
@@ -115,11 +115,11 @@ type: 'Mobile App'
       <img class="size-326px" src="/boton-cobrar.png" alt="boton-cobrar.png">
     </div>
 </div>
-  <div class="col-2-section mt-56">
+  <div class="col-2-section mt-56 content-50 xs-reverse">
     <div class="image-content-l">
       <img class="size-326px" src="/acceso-rapido-servicios-embebidos.png" alt="acceso-rapido-servicios-embebidos">
     </div>
-  <div class="text-content">
+  <div class="text-content ">
     <h3 class="text-3xl text-medium">
       Priorización y acceso 
       rápido a todos los 
@@ -136,7 +136,7 @@ type: 'Mobile App'
     </p>
   </div>
 </div>
-  <div class="col-2-section mt-56">
+  <div class="col-2-section mt-56 content-50">
   <div class="text-content">
     <h3 class="text-3xl text-medium">
       Implementación de 
@@ -153,13 +153,13 @@ type: 'Mobile App'
      En las pruebas iniciales, algunos usuarios se confundían al no encontrar fácilmente el catálogo completo de servicios. Para solucionarlo, se agregó un chip con un ícono y el texto "Servicios", facilitando la transición y mejorando la claridad.
     </p>
   </div>
-  <div class="image-content-l">
-      <img class="size-326px" src="/implementacion-skeleton.png" alt="implementacion-skeleton">
+     <div class="video-container-bolsiyo">
+      <video src="/videos/bolsiyo-Skeleton.mp4" loop autoplay muted playsinline style="width: 100%;"></video>
     </div>
 </div>
-  <div class="col-2-section mt-56">
-    <div class="image-content-l">
-      <img class="size-326px" src="/mobile-bolsiyo-gif.png" alt="mobile-bolsiyo-gif.png">
+  <div class="col-2-section mt-56 content-50 xs-reverse">
+    <div class="video-container-bolsiyo">
+      <video src="/videos/bolsiyo-flujo-espacio-completo.mp4" loop autoplay muted playsinline style="width: 100%;"></video>
     </div>
   <div class="text-content">
     <h3 class="text-3xl text-medium">

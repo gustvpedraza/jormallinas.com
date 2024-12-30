@@ -24,7 +24,7 @@ type: 'Mobile App'
   <div class="image-content-b-2">
     <img class="" src="/cornershop-mobile-antes-despues.png" alt="cornershop-mobile-antes-despues">
   </div>
-   <br><br> <br><br>
+   <br><br> 
 
   ## El problema
 
@@ -56,14 +56,15 @@ type: 'Mobile App'
     </div>
   </div>
 
-  <br><br> <br><br>
+  <br><br> 
 
   ## Research
 
   El proyecto comenzó con una investigación centrada en los usuarios actuales para comprender cómo la situación los afectaba y definir la mejor manera de abordar sus necesidades. Realicé entrevistas cualitativas con una muestra de 15 usuarios para explorar sus experiencias, identificando puntos débiles al intentar comprar en la aplicación. Algunos comentarios destacados fueron:
 
   <div class="image-content-b-2">
-    <img class="" src="/research-cornershop.png" alt="research-cornershop">
+    <div class="desktop"> <img  src="/research-cornershop.png" alt="research-cornershop"> </div>
+    <div class="mobile"> <img  src="/research-cornershop-mobile.png" alt="research-cornershop"> </div>
   </div>
 
   <br><br> <br><br>
@@ -73,7 +74,8 @@ type: 'Mobile App'
   Ayudó a entender mejor cómo los usuarios completan una tarea clave. Esto me ayudó a simplificar los pasos, hacerlo más claro y asegurarme de que la experiencia sea fácil y fluida.
   
   <div class="image-content-b-2">
-    <img class="" src="/cornershop-task flow.png" alt="cornershop-task flow">
+    <div class="desktop"> <img  src="/cornershop-task flow.png" alt="cornershop-task flow"> </div>
+    <div class="mobile"> <img  src="/cornershop-task flow-mobile.png" alt="cornershop-task flow"> </div>
   </div>
  <br><br> <br><br>
 
@@ -94,7 +96,7 @@ type: 'Mobile App'
  Los desafíos complejos identificados durante estas sesiones fueron validados y refinados antes de la implementación, garantizando que la funcionalidad final estuviera alineada con las expectativas y necesidades del usuario.
 
   <div class="image-content-b-2">
-    <img class="w-100" src="cornershop-prueba de usabilidad" alt="cornershop-prueba de usabilidad">
+    <img class="w-100" src="/cornershop-prueba-de-usabilidad.png" alt="cornershop-prueba de usabilidad">
   </div>
 
   <br><br>
@@ -103,7 +105,7 @@ type: 'Mobile App'
   <h2 class="text-6xl text-medium text-center mt-72">
      Decisiones de diseño
   </h2>
-  <div class="col-2-section mt-24">
+  <div class="col-2-section mt-24 content-50 xs-reverse">
     <div class="image-content-l">
       <img class="size-326px" src="/cornershop-decesion-1.png" alt="cornershop-decesion-1.png">
     </div>
@@ -123,7 +125,7 @@ type: 'Mobile App'
     </p>
   </div>
 </div>
-  <div class="col-2-section mt-56">
+  <div class="col-2-section mt-56 content-50">
   <div class="text-content">
     <h3 class="text-3xl text-medium">
       Vaciar carrito con un solo tap
@@ -139,7 +141,7 @@ type: 'Mobile App'
       <img class="size-326px" src="/cornershop-decesion-2.png" alt="cornershop-decesion-2.png">
     </div>
 </div>
-  <div class="col-2-section mt-56">
+  <div class="col-2-section mt-56 content-50 xs-reverse">
     <div class="image-content-l">
       <img class="size-326px" src="/cornershop-decesion-3.png" alt="cornershop-decesion-3">
     </div>
@@ -161,6 +163,10 @@ type: 'Mobile App'
   ## Nueva experiencia de rediseño
 
 La nueva experiencia, tras el rediseño, es más intuitiva, fluida y visualmente atractiva. Simplifiqué los procesos clave y optimicé la navegación, asegurando que cada interacción sea clara y satisfactoria para los usuarios.
+
+  <div class="video-container-cornershop">
+      <video src="/videos/Cornershop-flujo-completo.mp4" loop autoplay muted playsinline></video>
+  </div>
 
   <br><br> <br><br>
 

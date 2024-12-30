@@ -3,11 +3,11 @@ import ButtonIcon from "./ButtonIcon.astro"
 ---
 <form id="form" class="form" action="https://formspree.io/f/xnqoqzqz" method="POST">
     <label for="">Nombre completo <span>*</span></label>
-    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="text" name="name" placeholder="Escribe tu nombre y apellido" required>
     <label for="">Correo electrónico <span>*</span></label>
-    <input type="email" name="_replyto" placeholder="Correo" required>
+    <input type="email" name="_replyto" placeholder="Ejemplo@correo.com" required />
     <label for="">Tu mensaje <span>*</span></label>
-    <textarea name="message" placeholder="Mensaje" required></textarea>
+    <textarea name="message" placeholder="Escribe tu comentario aquí..." required></textarea>
     <div>
         <ButtonIcon link="#" type="primary">Enviar mensaje</ButtonIcon>
 
