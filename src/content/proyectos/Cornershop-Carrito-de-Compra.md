@@ -29,7 +29,7 @@ type: 'Mobile App'
   ## El problema
 
   Los usuarios enfrentan dificultades al editar productos en el carrito de compra. Muchos abandonan sus carritos porque eliminar o modificar productos es un proceso lento, que requiere confirmación a través de un modal. Además, no se ofrece la opción de vaciar el carrito de forma sencilla.
-  <br><br> <br><br>
+  <br><br> <br>
   ## Experiencia antes del rediseño
 
   Los usuarios enfrentan dificultades al editar productos en el carrito de compra. Muchos abandonan sus carritos porque eliminar o modificar productos es un proceso lento, que requiere confirmación a través de un modal. Además, no se ofrece la opción de vaciar el carrito de forma sencilla.
@@ -37,26 +37,26 @@ type: 'Mobile App'
   <div class="image-content-b-2">
     <img class="" src="/experiencia-antes.png" alt="experiencia-antes">
   </div>
-  <br><br> <br><br>
+  <br><br> 
 
   ## Metas
   <br>
   <div class="cards-proyect-container">
-    <div class="card">
+    <div class="card bg-100">
       <h3 class="text-base text-medium"><b>Usuario</b></h3>
       <h3 class="text-base text-light">Editar y comprar sin estrés.</h3>
     </div>
-    <div class="card">
+    <div class="card bg-100">
       <h3 class="text-base text-medium"><b>Negocio</b></h3>
       <h3 class="text-base text-light">Reducir el abandono de los carritos de compra.</h3>
     </div>
-    <div class="card">
+    <div class="card bg-100">
       <h3 class="text-base text-medium"><b>Producto</b></h3>
       <h3 class="text-base text-light">Maximizar el rendimiento de la app.</h3>
     </div>
   </div>
 
-  <br><br> 
+  <br><br>
 
   ## Research
 
@@ -67,7 +67,7 @@ type: 'Mobile App'
     <div class="mobile"> <img  src="/research-cornershop-mobile.png" alt="research-cornershop"> </div>
   </div>
 
-  <br><br> <br><br>
+  <br><br> <br> 
 
   ## Task flow
 
@@ -77,7 +77,7 @@ type: 'Mobile App'
     <div class="desktop"> <img  src="/cornershop-task flow.png" alt="cornershop-task flow"> </div>
     <div class="mobile"> <img  src="/cornershop-task flow-mobile.png" alt="cornershop-task flow"> </div>
   </div>
- <br><br> <br><br>
+ <br><br><br>
 
   ## Wireframes
 
@@ -87,7 +87,7 @@ type: 'Mobile App'
     <img class="w-100" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/dd351c155935651.635ee1cf6ffd7.gif" alt="cornershop-task flow">
   </div>
 
-  <br><br> <br><br>
+  <br><br> <br>
 
   ## Pruebas de usabilidad
 
@@ -158,7 +158,7 @@ type: 'Mobile App'
   </div>
 </div>
 
-  <br><br> <br><br>
+  <br><br> <br>
 
   ## Nueva experiencia de rediseño
 
@@ -168,7 +168,7 @@ La nueva experiencia, tras el rediseño, es más intuitiva, fluida y visualmente
       <video src="/videos/Cornershop-flujo-completo.mp4" loop autoplay muted playsinline></video>
   </div>
 
-  <br><br> <br><br>
+  <br><br>
 
   ## Resultados
 

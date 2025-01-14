@@ -426,10 +426,28 @@ hr {
 	width: 50%;
 }
 
+.bg-100{
+	background-color: var(--background-100);
+}
 
+.bg-neutral-0{
+	background-color: var(--neutral-0);
+}
 
+.text-secondary-700{
+	color: var(--secundary-700);
+}
 
+.mb-48{
+	margin-bottom: 48px;
+}
 
+@media (max-width: 575.98px){
+	.xs-block{
+		display: block;
+		margin-bottom: 8px;
+	}
+}
 
 
 

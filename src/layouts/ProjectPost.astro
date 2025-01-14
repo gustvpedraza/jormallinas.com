@@ -9,10 +9,24 @@ import Footer from '../components/Footer.astro';
 const { slug } = Astro.params;
 const project = await getEntry('proyectos', slug);
 const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria, type} = project.data;
+
+import { getCollection } from 'astro:content';
+import Button from "../components/Button.astro";
+const posts = (await getCollection('proyectos')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <html lang="en">
     <head>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BZJK73YDMV"></script>
+		<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-BZJK73YDMV');
+		</script>
         <BaseHead title={title} description={description} />
     </head>
 
@@ -58,6 +72,42 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		<h4 class="text-center text-3xl text-medium gracias">
 			¡Gracias por leer!
 		</h4>
+		<section  class="projects bg-neutral-0 projects-section">
+			<h3 class="text-center text-4xl xs-text-lg text-semibold text-secondary-700 mb-48">
+				OTROS PROYECTOS
+			</h3>
+			<ul>
+				{
+					posts.filter(post => post.id !== slug).map((post) => (
+							<li>
+								<a href={`/proyectos/${post.id}/`}>
+									<img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
+								</a>
+								<div class="projects__card-content">
+									<div>
+										<h5 class="projects__label text-xl xs-text-base text-medium">{post.data.type}</h5>
+										<h4 class="projects__title text-4xl xs-text-2xl text-light">
+											<b class="text-bold">{post.data.title.split(' ')[0]}</b>{' '}
+											<span>{post.data.title.split(' ').slice(1).join(' ')}</span>
+										</h4>
+									</div>
+									<div class="button-wrapper">
+										<Button link={`/proyectos/${post.id}/`} type="secundary">
+											<i class="projects__icon">
+												<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z"/>
+												</svg>
+											</i>
+										</Button>
+									</div>
+								</div>
+								
+							</li>
+				  
+					))
+				}
+			</ul>
+		</section>
         <Footer />
     </body>
 </html>
@@ -75,6 +125,16 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		padding: 80px 0px 0px;
 		border-radius: 0 0 64px 64px;
     }
+
+	.projects-section{
+		padding: 118px 0 118px;
+	}
+
+	@media (max-width: 575.98px){
+		.projects-section{
+		padding: 58px 24px 58px;
+		}
+	}
 
 	@media (max-width: 575.98px){
 		.project-post-header{
@@ -170,6 +230,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		font-size:var(--text-6xl);
 		font-family: var(--text-medium);
 		font-weight: 500;
+		line-height: 1.2;
 	}
 
 	@media (max-width: 575.98px){
@@ -177,7 +238,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		color: var(--secundary-900);
 		font-size:var(--text-2xl);
 		font-family: var(--text-medium);
-		font-weight: 500;
+		font-weight: 700;
 		}
 	}
 
@@ -248,7 +309,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 	.project-container{
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 62px 50px;
+		padding: 62px 50px 32px;
 
 	}
 	@media (max-width: 820px){
@@ -494,6 +555,101 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 		z-index: 1;
 
 	}
+
+	@media (min-width: 1367px){
+        .projects ul{
+            display: grid;
+            grid-template-columns: 584px 584px;
+            gap: 48px;
+            place-items: center;
+            margin: 0 auto;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 1367px){
+        .projects ul{
+        display: grid;
+        grid-template-columns: 584px;
+        gap: 48px;
+        place-items: center;
+        margin: 0 auto;
+        justify-content: center;
+        }
+    }
+
+    @media (max-width: 575.98px){
+        .projects{
+        margin-top: 42px;
+    }
+        .projects ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        place-items: center;
+        margin: 0 auto;
+        justify-content: center;
+        }
+    }
+ 
+    .projects__card-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+    .projects__label{
+        margin-top: 8px;
+    }
+    .projects__title{
+        color: var(--secundary-900);
+    }
+ 
+
+    .projects ul li{
+        list-style: none;
+        max-width: 584px;
+    }
+    .projects ul li a{
+        text-decoration: none;
+        color: var(--secundary-900);
+    }
+    .projects__icon{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        padding: 4px;
+        margin-left: 2px;
+        margin-right: 2px;
+        position: relative;
+        top: -2px;
+    }
+    i svg path{
+        fill: var(--secundary-700);
+        transition: all .3s ease;
+    }
+
+    i.disabled svg path{
+        fill: var(--neutral-400) !important;
+        transition: all .3s ease;
+    }
+
+
+    .button-wrapper:hover i svg path{
+        fill: var(--secundary-900);
+        transition: all .3s ease;
+    }
+
+    @media (max-width: 575.98px){
+        .projects__title{
+            display: flex;
+            flex-direction: column;
+        }
+        projects__title span{
+            display: block !important;
+        }
+        projects__title b{
+            display: block !important;
+        }
+    	}
 
 </style>
 

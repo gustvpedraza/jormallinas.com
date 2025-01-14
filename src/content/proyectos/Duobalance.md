@@ -191,7 +191,7 @@ type: 'Mobile App'
   <br><br>
 
    ## Pruebas de usabilidad
-
+  <br>
   <div class="image-content-b-2">
      <div class="desktop"> <img class="mt-0 mb-40" src="/duoapp-usabilidad.png" alt="duoapp-usabilidad"> </div>
      <div class="mobile"> <img class="mt-0 mb-40" src="/duoapp-usabilidad-mobile.png" alt="duoapp-usabilidad"> </div>
@@ -280,5 +280,10 @@ type: 'Mobile App'
 
 <br><br> 
 
-  ## Experiencia Final
+  <h2 class="text-6xl text-medium text-center mt-72">
+     Experiencia Final
+  </h2>
 
+ <div class="video-container-cornershop">
+      <video src="/videos/duo-balance-experiencia-completa.mp4" loop autoplay muted playsinline></video>
+  </div>
