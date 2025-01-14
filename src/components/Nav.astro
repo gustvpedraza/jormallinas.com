@@ -102,12 +102,12 @@ import Logo from './Logo.astro';
     observer.observe(section);
   });
 
-  // Manejar el caso cuando estamos en la parte superior de la página
-  function checkInitialPosition() {
-    if (window.scrollY === 0) {
-      updateActiveLink('inicio');
+// Manejar el caso cuando estamos en la parte superior de la página
+function checkInitialPosition() {
+    if (window.scrollY === 0 && window.location.pathname === '/') {
+        updateActiveLink('inicio');
     }
-  }
+}
 
   // Verificar la posición inicial y escuchar eventos de scroll
   checkInitialPosition();
@@ -132,6 +132,7 @@ import Logo from './Logo.astro';
 		text-decoration: none;
 		color: var(--secundary-900);
 	}
+
 
 	@media (min-width: 821px){
 		.mobile-menu {
@@ -424,6 +425,7 @@ import Logo from './Logo.astro';
         pointer-events: none;
         transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
+ 
     }
 
 
@@ -443,6 +445,10 @@ import Logo from './Logo.astro';
         transition: all .3s ease;
         font-size: 1.125rem;
         flex-grow: 0;
+    }
+
+   .link.active-link{
+        color: var(--secundary-500) !important;
     }
 
 </style>

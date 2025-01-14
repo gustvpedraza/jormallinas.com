@@ -50,7 +50,7 @@ type: 'Mobile App'
       Research
     </h2> 
     <p class="text-lg text-regular">
-      En la fase de investigación inicial, el objetivo fue validar si la venta mixta realmente respondía a una necesidad de los usuarios. Para ello, se realizaron encuestas cuantitativas entre diferentes segmentos de comerciantes, con el fin de comprenderla utilidad de integrar productos y servicios en un solo flujo de ventas.
+      En la fase de investigación inicial, el objetivo fue validar si la venta mixta realmente respondía a una necesidad de los usuarios. Para ello, se realizaron encuestas cuantitativas entre diferentes segmentos de comerciantes, con el fin de comprender la utilidad de integrar productos y servicios en un solo flujo de ventas.
     </p>
     <p class="text-lg text-regular">
       Al analizar los datos, se observó que muchos usuarios mostraban una gran disposición a utilizar una herramienta que les permitiera gestionar tanto productos como servicios desde una sola interfaz.
@@ -61,7 +61,7 @@ type: 'Mobile App'
   </div>
 </div>
 
-  <div class="col-2-section mt-72 content-50">
+  <div class="col-2-section mt-72 content-50 xs-reverse">
   <div class="image-content-l">
     <img class="size-302px" src="/ilustration-usability.png" alt="ilustration-usability">
   </div>
@@ -108,7 +108,7 @@ type: 'Mobile App'
       Botón "Cobrar"
     </h3>
     <p class="text-lg text-regular">
-     Al liberar el espacio que antes ocupaba el botón “Cobrar” se maximiza la visibilidad de los productos, lo cual es crucial para los usuarios que gestionan grandes listas de productos. Esta reorganización mejora la legibilidad y permite a los usuarios concentrarse en la gestión de productos, manteniendo la acción de cobro siempre accesible.
+     Al liberar el espacio que antes ocupaba el botón “Cobrar” se maximiza la visibilidad de los productos, lo cual es crucial para los usuarios que gestionan grandes listas de productos. Esta reorganización mejora la legibilidad y permite a los usuarios concentrarse en la venta de productos, manteniendo la acción de cobro siempre accesible.
     </p>
   </div>
    <div class="image-content-l">

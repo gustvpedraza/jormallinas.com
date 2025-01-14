@@ -164,7 +164,7 @@ body {
 
 .text-6xl{
 	font-size: var(--text-6xl);
-	line-height: 1.3;
+	line-height: 1.2;
 }
 .text-5xl{
 	font-size: var(--text-5xl);
@@ -302,7 +302,7 @@ body {
 @media (max-width: 575.98px){
 	.xs-text-base {
 		font-size: var(--text-base);
-		line-height: 1.3;
+		line-height: 1.5;
 	}
 	.xs-text-lg {
 		font-size: var(--text-lg);

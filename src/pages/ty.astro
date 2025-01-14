@@ -9,9 +9,9 @@ import Button from '../components/Button.astro';
 	</head>
 	<body>
 		<main class="page-ty">
-			<h1 class="text-7xl sm-text-5xl xs-text-4xl text-semibold">¡Gracias por tu mensaje!</h1>
-			<p class="text-2xl sm-text-base text-regular">Estoy revisando la información que me has enviado y me pondré en contacto contigo muy pronto. Mientras tanto, si tienes alguna otra consulta, no dudes en escribirme nuevamente.</p>
-			<p class="text-2xl text-regular">¡Espero que podamos trabajar juntos!</p>
+			<h1 class="text-7xl sm-text-5xl xs-text-4xl text-semibold">¡Gracias por <span class="d-block">tu mensaje!</span></h1>
+			<p class="text-2xl sm-text-base xs-text-base text-regular">Estoy revisando la información que me has enviado y me pondré en contacto contigo muy pronto. Mientras tanto, si tienes alguna otra consulta, no dudes en escribirme nuevamente.</p>
+			<p class="text-2xl text-regular">¡Espero que podamos <span class="d-block">trabajar juntos!</span></p>
             <div class="mt-32">
                 <Button link="/" type="tertiary">
                     Regresar
@@ -47,6 +47,12 @@ import Button from '../components/Button.astro';
         color: var(--secundary-900);
         margin-top: 16px;
         max-width: 75ch;
+    }
+    @media (max-width: 575.98px){
+        .d-block{
+        display: block;
+        width: 100%;
+        }
     }
 </style>
 

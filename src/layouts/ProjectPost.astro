@@ -22,8 +22,8 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 			<div class="post-header-wrapper">
 				<div class="project-post__hero">
 					<div>
-						<h1 class="sm-text-4xl xs-text-2xl">{titleHeader.split('.')[0]}.</h1>
-						<h2 class="sm-text-4xl xs-text-2xl">{titleHeader.split('.').slice(1).join('.')}</h2>
+						<h1 class="text-6xl sm-text-4xl xs-text-2xl">{titleHeader.split('.')[0]}.</h1>
+						<h2 class="text-6xl sm-text-4xl xs-text-2xl">{titleHeader.split('.').slice(1).join('.')}</h2>
 						<p class="sm-text-lg xs-text-base">{description}</p>
 					</div>
 					<img src={imgHeader} alt={title}>
@@ -68,7 +68,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 	}
     .project-post-header {
         background-color: var(--background-100);
-		height: 600px;
+		height: 636px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -84,7 +84,12 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 
 	@media (max-width: 1440px){
 		.project-post-header{
-			height: 702px;
+			height: 636px;
+		}
+	}
+	@media (max-width: 1024px){
+		.project-post-header{
+			height: 798px;
 		}
 	}
 
@@ -96,6 +101,7 @@ const { title,titleHeader,description,imgHeader,empresa, rol, tiempo, categoria,
 
 	@media (max-width: 575.98px){
 		.project-post-header{
+			height: 974px;
 			height: auto;
 			padding: 24px;
 		}
