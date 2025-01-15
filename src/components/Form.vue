@@ -109,39 +109,26 @@ export default {
 
     
 
-    async submitForm() {
+   async submitForm() {
   try {
     const endpoint = "https://submit-form.com/zAuBuFwux";
 
-    const response = await fetch(endpoint, {
+    await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(this.formData),
+      mode: "no-cors", // Desactiva la verificación CORS
     });
 
-    if (response.ok) {
-      // Reiniciar formulario tras éxito
-      this.formData = {
-        name: '',
-        email: '',
-        message: ''
-      };
-
-      // Redirigir a la página de "Thank You"
-      window.location.href = '/ty';
-    } else {
-      console.error("Respuesta del servidor no OK:", response.status, response.statusText);
-      alert("Hubo un problema al enviar el formulario. Intenta nuevamente.");
-    }
+    // Redirigir a la página de agradecimiento
+    window.location.href = '/ty';
   } catch (error) {
     console.error("Error en la solicitud:", error);
     alert("Hubo un error inesperado. Por favor, intenta de nuevo.");
   }
 }
-
-
   }
 }
 </script>
