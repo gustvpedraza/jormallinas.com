@@ -19,7 +19,7 @@ input{
     border: 1px solid var(--background-300);
     font-size: var(--text-base);
     font-family: var(--text-regular);
-    color: var(--neutral-300);
+    color: var(--secundary-900);
 }
 input::placeholder{
     color: var(--neutral-300);
@@ -42,7 +42,7 @@ textarea{
     border: 1px solid var(--background-300);
     font-size: var(--text-base);
     font-family: var(--text-regular);
-    color: var(--neutral-300);
+    color: var(--secundary-900);
 }
 textarea::placeholder{
     color: var(--neutral-300);
