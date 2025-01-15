@@ -109,26 +109,37 @@ export default {
 
     
 
-   async submitForm() {
+    async submitForm() {
   try {
     const endpoint = "https://submit-form.com/zAuBuFwux";
+
+    // Convertir los datos del formulario a formato `x-www-form-urlencoded`
+    const formBody = new URLSearchParams({
+      name: this.formData.name,
+      email: this.formData.email,
+      message: this.formData.message,
+    });
 
     await fetch(endpoint, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify(this.formData),
-      mode: "no-cors", // Desactiva la verificación CORS
+      body: formBody.toString(),
+      mode: "no-cors", // Usar no-cors para evitar problemas de CORS
     });
 
     // Redirigir a la página de agradecimiento
-    window.location.href = '/ty';
+    window.location.href = "/ty";
   } catch (error) {
     console.error("Error en la solicitud:", error);
     alert("Hubo un error inesperado. Por favor, intenta de nuevo.");
   }
 }
+
+
+
+
   }
 }
 </script>
