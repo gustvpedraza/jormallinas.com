@@ -1,5 +1,5 @@
 <template>
-  <form id="form" class="form" @submit.prevent="handleSubmit">
+  <form id="form" class="form" @submit.prevent="handleSubmit" name="contact">
     <label for="name">Nombre completo <span>*</span></label>
     <input 
       type="text" 
@@ -92,6 +92,7 @@ export default {
     async handleSubmit() {
       this.isSubmitting = true
 
+      // Validar nuevamente antes de enviar
       const newErrors = Object.keys(this.formData).reduce((acc, key) => ({
         ...acc,
         [key]: this.validateField(key, this.formData[key])
@@ -106,19 +107,41 @@ export default {
       this.isSubmitting = false
     },
 
+    
+
     async submitForm() {
-      try {
-        // Aquí iría la lógica para enviar el formulario
-        console.log('Formulario enviado:', this.formData)
-        this.formData = {
-          name: '',
-          email: '',
-          message: ''
-        }
-      } catch (error) {
-        console.error('Error al enviar el formulario:', error)
-      }
+  try {
+    const endpoint = "https://submit-form.com/zAuBuFwux";
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.formData),
+    });
+
+    if (response.ok) {
+      // Reiniciar formulario tras éxito
+      this.formData = {
+        name: '',
+        email: '',
+        message: ''
+      };
+
+      // Redirigir a la página de "Thank You"
+      window.location.href = '/ty';
+    } else {
+      console.error("Respuesta del servidor no OK:", response.status, response.statusText);
+      alert("Hubo un problema al enviar el formulario. Intenta nuevamente.");
     }
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    alert("Hubo un error inesperado. Por favor, intenta de nuevo.");
+  }
+}
+
+
   }
 }
 </script>
