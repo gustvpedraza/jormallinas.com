@@ -108,6 +108,7 @@ import Button from './Button.astro';
         position: absolute;
         bottom: 0;
         right: 0;
+        pointer-events: none;
     }
     @media (max-width: 1440px){
         .hero__img{
@@ -140,9 +141,27 @@ import Button from './Button.astro';
         }
     }
 
+    @media (max-width: 375.98px){
+        .hero__img{
+            position: absolute;
+            bottom: -48px;
+            right: -12%;
+            height: 300px;
+            width: auto;
+        }
+    }
+
     #canvas-saludo{
         width: 500px;
         height: auto;
+    }
+
+    @media (max-width: 1024px){
+        #canvas-saludo{
+        width: 320px;
+        height: auto;
+        margin: 80px 0 40px;
+        }
     }
 
     @media (max-width: 575.98px){
@@ -154,6 +173,14 @@ import Button from './Button.astro';
         .enunciado{
             max-width: 100%;
             padding: 8px 24px;
+        }
+    }
+
+    @media (max-width: 375.98px){
+        #canvas-saludo{
+        width: 320px;
+        height: auto;
+        margin: -24px 0 40px;
         }
     }
 
@@ -194,6 +221,13 @@ import Button from './Button.astro';
     .hero-character{
         height: 480px;
         pointer-events: none;
+    }
+
+    @media (max-width: 820px){
+        .hero-character{
+            height: 330px;
+            margin-top: 40px;
+        }
     }
 
     @media (max-width: 575.98px){
