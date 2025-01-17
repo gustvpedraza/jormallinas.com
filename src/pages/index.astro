@@ -69,6 +69,7 @@ import Contact from '../components/Contact.astro';
 
 	const hamburger = document.querySelector('.hamburger-menu');
 	const close = document.querySelector('.close-btn');
+	const contact = document.querySelector('.contact-btn');
 	const menu = document.querySelector('.mobile-menu');
 	const body = document.querySelector('.body');
 
@@ -81,6 +82,7 @@ import Contact from '../components/Contact.astro';
 
 	hamburger.addEventListener('click', toggleMenu);
 	close.addEventListener('click', toggleMenu);
+	contact.addEventListener('click', toggleMenu);
 
 	document.addEventListener('click', (e) => {
 		if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
