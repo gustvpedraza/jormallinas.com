@@ -26,7 +26,8 @@ const posts = (await getCollection('proyectos')).sort(
         <ul>
             {
                 posts.map((post) => (
-                        <li>
+                        <li class="card-project" data-aos="fade-up"
+                        data-aos-duration="1000">
                             <a href={`/proyectos/${post.id}/`}>
                                 <img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
                             </a>
@@ -53,7 +54,8 @@ const posts = (await getCollection('proyectos')).sort(
               
                 ))
             }
-            <li>
+            <li class="card-project" data-aos="fade-up"
+            data-aos-duration="1000">
                 <img width={584} height={524} src="/coming-thumbnail.jpg" alt="Próximamente Disponible" />
                 <div class="projects__card-content">
                     <div>

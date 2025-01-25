@@ -23,7 +23,9 @@ import Contact from '../components/Contact.astro';
 
 		gtag('config', 'G-BZJK73YDMV');
 		</script>
-		
+
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="body">
@@ -66,11 +68,13 @@ import Contact from '../components/Contact.astro';
 </style>
 <script is:inline>
 
+	
 	const hamburger = document.querySelector('.hamburger-menu');
 	const close = document.querySelector('.close-btn');
 	const contact = document.querySelector('.contact-btn');
 	const menu = document.querySelector('.mobile-menu');
 	const body = document.querySelector('.body');
+	const mobileLinks = document.querySelectorAll('.mobile-link-close');
 
 	function toggleMenu() {
 		menu.classList.toggle('active');
@@ -83,6 +87,14 @@ import Contact from '../components/Contact.astro';
 	close.addEventListener('click', toggleMenu);
 	contact.addEventListener('click', toggleMenu);
 
+	// Add click handlers for mobile links
+	mobileLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			// Small delay to allow the navigation to happen before closing menu
+			setTimeout(toggleMenu, 100);
+		});
+	});
+
 	document.addEventListener('click', (e) => {
 		if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
 			toggleMenu();
@@ -90,5 +102,10 @@ import Contact from '../components/Contact.astro';
 	});
   
   </script>
+
+<script is:inline>
+	AOS.init();
+  </script>
+
 
 
