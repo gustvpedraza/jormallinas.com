@@ -1,7 +1,7 @@
 ---
 title: 'Bolsiyo Venta Mixta'
 pubDate: 'Jun 20 2024'
-heroImage: '/bolsiyo-thumbnail.jpg'
+heroImage: '/bolsiyo-thumbnail.png'
 titleHeader: 'Venta mixta.Más flexible, más ganancias'
 imgHeader: '/bolsiyo-hero.png'
 description: 'Conoce cómo se rediseñó esta nueva experiencia para simplificar la gestión de ventas, mejorar la interacción del usuario y potenciar los resultados de los comerciantes.'

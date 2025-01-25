@@ -1,7 +1,7 @@
 ---
 title: 'Duobalance Finanzas personales'
 pubDate: 'Jun 18 2023'
-heroImage: '/duoapp-thumbnail.jpg'
+heroImage: '/duoapp-thumbnail.png'
 titleHeader: 'MVP gestión de finanzas personales y familiares'
 imgHeader: '/duo-hero.png'
 description: 'El 53% de los colombianos maneja mal sus finanzas, en gran parte por ignorar los peligrosos gastos hormiga.'

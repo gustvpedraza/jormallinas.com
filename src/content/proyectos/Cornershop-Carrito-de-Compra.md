@@ -1,7 +1,7 @@
 ---
 title: 'Cornershop Carrito de compra'
 pubDate: 'Oct 12 2022'
-heroImage: '/cornershop-thumbnail.jpg'
+heroImage: '/cornershop-thumbnail.png'
 titleHeader: 'Evaluación del carrito de compra de Cornershop'
 imgHeader: '/cornershop-hero.png'
 description: 'Como diseñadora UX/UI, trabajé en este proyecto durante un mes, aplicando la metodología doble diamante. Mis responsabilidades incluyeron investigación, ideación, iteración de propuestas y el testeo con usuarios.'

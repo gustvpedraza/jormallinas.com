@@ -29,7 +29,9 @@ const posts = (await getCollection('proyectos')).sort(
                         <li class="card-project" data-aos="fade-up"
                         data-aos-duration="1000">
                             <a href={`/proyectos/${post.id}/`}>
-                                <img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
+                               <div class="card-project__img-container">
+                                    <img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
+                               </div>
                             </a>
                             <div class="projects__card-content">
                                 <div>
@@ -199,5 +201,37 @@ const posts = (await getCollection('proyectos')).sort(
             display: block !important;
         }
     	
+    }
+    .card-project__img-container{
+        border-radius: 24px;
+        overflow: hidden;
+    }
+    li:nth-child(1) .card-project__img-container{
+        background-color: #99DB9A;
+    }
+
+    li:nth-child(2) .card-project__img-container{
+        background-color: #F8E58F;
+    }
+
+    li:nth-child(3) .card-project__img-container{
+        background-color: #FEA79B;
+    }
+
+    .card-project__img-container img{
+        transition: all .3s ease;
+       
+    }
+
+    .card-project__img-container img:hover{
+        transform: scale(1.15);
+        transition: all .3s ease;
+        position: relative;
+    }
+    
+    li:nth-child(1) .card-project__img-container img:hover{
+        transform: scale(1.3);
+        transition: all .3s ease;
+        position: relative;
     }
 </style>
