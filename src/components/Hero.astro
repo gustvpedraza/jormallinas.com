@@ -8,19 +8,13 @@ import Button from './Button.astro';
 <header class="hero-container">
     <div class="hero">
 
-        <div class="rellax position-absolute sea" data-rellax-speed="-2" data-rellax-percentage="1">
-            <video src="/videos/Standard_Mode_waterfall__water_moving__wave__s.mp4" loop autoplay muted playsinline></video>
-        </div>
+   
 
       
 
      
 
      
-
-        <div class="rellax position-absolute rocks" data-rellax-speed="-3" data-rellax-percentage="1">
-            <img src="/hero-parallax/Rock.png" alt="rocks">
-        </div>
 
         <div class="hero__text rellax position-relative" data-rellax-speed="10"
         data-rellax-percentage="0.5">
@@ -29,15 +23,13 @@ import Button from './Button.astro';
             <h2 class="text-center text-lg sm-text-lg xs-text-base text-regular mb-24 enunciado">Ayudo a startups, agencias de diseño y pequeñas empresas a convertir ideas en aplicaciones y páginas web responsive, optimizadas para ofrecer experiencias intuitivas que atraen y retienen usuarios.</h2>
             
             <div>
-                <Button link="/#form" type="secundary">
+                <Button link="/#form" type="primary">
                     Contactar
                 </Button>
             </div>
         </div>
 
-        <div class="rellax position-absolute rocks" data-rellax-speed="-3" data-rellax-percentage="1">
-            <img src="/hero-parallax/Rock.png" alt="rocks">
-        </div>
+   
 
         <div class="hero__img rellax" data-rellax-speed="-2" data-rellax-percentage="0.5">
             <img class="hero-character" src="/character-1.png" alt="hero-character">
@@ -52,7 +44,7 @@ import Button from './Button.astro';
         max-width: 500px;
     }
     .hero{
-        background-color: var(--background-200);
+        background-image: url('/Hero-Jorma.png');
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: cover;
@@ -62,6 +54,8 @@ import Button from './Button.astro';
         place-items: center;
         background-position-y: -250px;
         overflow: hidden;
+        max-width: 1920px;
+        margin: 0 auto;
     }
     .hero__text{
         display: flex;
@@ -107,7 +101,7 @@ import Button from './Button.astro';
     .hero__img{
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 10%;
         pointer-events: none;
     }
     @media (max-width: 1440px){
@@ -219,7 +213,7 @@ import Button from './Button.astro';
     }
 
     .hero-character{
-        height: 480px;
+        height: 410px;
         pointer-events: none;
     }
 
@@ -234,6 +228,7 @@ import Button from './Button.astro';
         .hero-character{
             height: 250px;
             margin-top: 40px;
+            display: none;
         }
     }
 
