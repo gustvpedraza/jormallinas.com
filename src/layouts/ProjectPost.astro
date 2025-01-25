@@ -82,7 +82,9 @@ const posts = (await getCollection('proyectos')).sort(
 					posts.filter(post => post.id !== slug).map((post) => (
 							<li>
 								<a href={`/proyectos/${post.id}/`}>
-									<img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
+									<div class="card-project__img-container">
+										<img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
+									</div>
 								</a>
 								<div class="projects__card-content">
 									<div>
@@ -650,7 +652,29 @@ const posts = (await getCollection('proyectos')).sort(
         projects__title b{
             display: block !important;
         }
-    	}
+    }
+
+	.card-project__img-container{
+        border-radius: 24px;
+        overflow: hidden;
+    }
+   .card-project__img-container{
+        background-color: var(--background-100);
+    }
+
+
+    .card-project__img-container img{
+        transition: all .3s ease;
+       
+    }
+
+    .card-project__img-container img:hover{
+        transform: scale(1.15);
+        transition: all .3s ease;
+        position: relative;
+    }
+    
+ 
 
 </style>
 
