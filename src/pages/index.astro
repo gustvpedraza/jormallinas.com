@@ -30,10 +30,14 @@ import Contact from '../components/Contact.astro';
 	</head>
 	<body class="body">
 		<div class="header-wrapper relative">
-			<Nav/>
-			<Hero/>
+			<div class="rellax hero-content-container" data-rellax-speed="-4">
+				<Nav/>
+				<Hero/>
+			</div>
 		</div>
-		<Main />
+		<div class="rellax" data-rellax-speed="0">
+			<Main />
+		</div>
 		<Servicios/>
 		<About/>
 		<Experiencia/>
@@ -45,10 +49,12 @@ import Contact from '../components/Contact.astro';
   <style is:global>
 
 	body {
-		background-color: var(--background-50);
 		margin: 0 auto;
 		position: relative;
 		z-index: 2;
+	}
+	.header-wrapper{
+		background-color: var(--secundary-900);
 	}
 	.header-wrapper{
 		overflow: hidden;
@@ -102,10 +108,16 @@ import Contact from '../components/Contact.astro';
 	});
   
   </script>
-
+<script is:inline src="/rellax.min.js"></script>
+<script is:inline>
+     var rellax = new Rellax('.rellax', {
+    center:true
+  });
+</script>
 <script is:inline>
 	AOS.init();
   </script>
+
 
 
 
