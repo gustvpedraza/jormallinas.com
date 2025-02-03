@@ -82,7 +82,7 @@ const posts = (await getCollection('proyectos')).sort(
 					posts.filter(post => post.id !== slug).map((post) => (
 							<li>
 								<a href={`/proyectos/${post.id}/`}>
-									<div class="card-project__img-container">
+									<div class="card-project__img-container" data-color={post.data.title}>
 										<img width={584} height={524} src={post.data.heroImage} alt={post.data.title} />
 									</div>
 								</a>
@@ -658,9 +658,17 @@ const posts = (await getCollection('proyectos')).sort(
         border-radius: 24px;
         overflow: hidden;
     }
-   .card-project__img-container{
-        background-color: var(--background-100);
-    }
+.card-project__img-container {
+	&[data-color="Bolsiyo Venta Mixta"] {
+		background-color: #99DB9A;
+	}
+	&[data-color="Cornershop Carrito de compra"] {
+		background-color: #FEA79B;
+	}
+	&[data-color="Duobalance Finanzas personales"] {
+		background-color: #F8E58F;
+	}
+}
 
 
     .card-project__img-container img{

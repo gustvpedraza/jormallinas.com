@@ -25,7 +25,7 @@ type: 'Mobile App'
   </div>
    <br> 
 
-  <h2 class="text-6xl text-medium text-center mt-72">
+  <h2 class="text-6xl text-medium mt-72">
      Roadmap
   </h2>
   <div class="image-content-b-2">
@@ -201,7 +201,7 @@ type: 'Mobile App'
    </div>
 
 
-  <h2 class="text-6xl text-medium text-center mt-72">
+  <h2 class="text-6xl text-medium mt-72">
      Decisiones de diseño
   </h2>
   <div class="col-2-section mt-24 content-50 xs-reverse">
@@ -235,7 +235,7 @@ type: 'Mobile App'
 
   <br><br> 
 
-  <h2 class="text-6xl text-medium text-center mt-72">
+  <h2 class="text-6xl text-medium mt-72">
      UI Kit
   </h2>
 

@@ -102,7 +102,7 @@ type: 'Mobile App'
   <br><br>
   El diseño final de la tercera ronda se adaptó mejor a los usuarios en comparación con las versiones anteriores. Los participantes de la prueba reportaron una experiencia más fluida, con una mejor comprensión de cómo eliminar y modificar productos en su carrito. Además, la nueva disposición y etiquetado de los botones redujo la confusión sobre el estado de la compra y facilitó la navegación hacia el pago.
 
-  <h2 class="text-6xl text-medium text-center mt-72">
+  <h2 class="text-6xl text-medium mt-72">
      Decisiones de diseño
   </h2>
   <div class="col-2-section mt-24 content-50 xs-reverse">

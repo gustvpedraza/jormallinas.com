@@ -83,7 +83,7 @@ type: 'Mobile App'
     </p>
   </div>
 </div>
-  <h2 class="text-6xl text-medium text-center mt-72">
+  <h2 class="text-6xl text-medium mt-72">
      Decisiones de diseño
   </h2>
   <div class="col-2-section mt-24 content-50 xs-reverse">
