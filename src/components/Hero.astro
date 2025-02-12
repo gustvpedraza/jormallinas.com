@@ -2,17 +2,18 @@
 import { Image } from 'astro:assets'
 import heroImage from '../assets/character-1.png';
 import Button from './Button.astro';
+import Waves from './Waves.astro';
 ---
 
 
-<header class="hero-container rellax" data-rellax-speed="7">
+<header class="hero-container">
     <div class="hero">
         <div class="hero__text position-relative">
             <canvas id="canvas-saludo" class="mb-24"></canvas>
             <p class="text-center text-2xl sm-text-2xl xs-text-base text-semibold name">Soy Jormary Llinas • Web Designer y UX/UI Designer</p>
             <h2 class="text-center text-lg sm-text-lg xs-text-base text-regular mb-24 enunciado">Ayudo a startups, agencias de diseño y pequeñas empresas a convertir ideas en aplicaciones y páginas web responsive, optimizadas para ofrecer experiencias intuitivas que atraen y retienen usuarios.</h2>
             
-            <div>
+            <div class="hero__buttons">
                 <Button link="/#form" type="primary">
                     Contactar
                 </Button>
@@ -20,9 +21,14 @@ import Button from './Button.astro';
         </div>
     </div>
 </header>
+<Waves/>
 
 
 <style>
+    .hero__buttons{
+        position: relative;
+        z-index: 1;
+    }
     .enunciado{
         max-width: 500px;
     }
@@ -32,12 +38,12 @@ import Button from './Button.astro';
     .hero{
         background-color: var(--secundary-700);
         position: relative;
-        height: 100dvh;
         display: grid;
         place-items: center;
         overflow: hidden;
         max-width: 1920px;
         margin: 0 auto;
+        margin-top: 8%;
     }
     .hero__text{
         display: flex;
@@ -135,7 +141,7 @@ import Button from './Button.astro';
     }
 
     #canvas-saludo{
-        width: 620px;
+        width: 800px;
         height: auto;
     }
 

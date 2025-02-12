@@ -4,11 +4,15 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 
-import vue from '@astrojs/vue';
+
+
+import react from '@astrojs/react';
+
+
 
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://jormallinas.com/',
-    integrations: [mdx(), sitemap(), vue()],
+    integrations: [mdx(), sitemap(), react()],
 });
