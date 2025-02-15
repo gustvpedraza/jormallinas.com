@@ -1,30 +1,42 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Button from '../components/Button.astro';
+import MouseHover from '../components/MouseHover.jsx';
+import Waves from '../components/WavesInner.astro';
 ---
 
 <html lang="es">
 	<head>
 		<BaseHead title="Gracias" description="Página no encontrada" />
 	</head>
-	<body>
+	<body class="relative">
 		<main class="page-ty">
-			<h1 class="text-7xl sm-text-5xl xs-text-4xl text-semibold">¡Gracias por <span class="d-block">tu mensaje!</span></h1>
+            <MouseHover client:load />
+			<div class="page-ty-content">
+            <h1 class="text-7xl sm-text-5xl xs-text-4xl text-semibold">¡Gracias por <span class="d-block">tu mensaje!</span></h1>
 			<p class="text-2xl sm-text-base xs-text-base text-regular">Estoy revisando la información que me has enviado y me pondré en contacto contigo muy pronto. Mientras tanto, si tienes alguna otra consulta, no dudes en escribirme nuevamente.</p>
 			<p class="text-2xl text-regular">¡Espero que podamos <span class="d-block">trabajar juntos!</span></p>
-            <div class="mt-32">
-                <Button link="/" type="tertiary">
+            <div class="mt-32 d-flex">
+                <Button link="/" type="primary">
                     Regresar
                 </Button>
             </div>
+       
+            </div>
 		</main>
+        <Waves/>
+        
+       
 	</body>
 </html>
 
 <style>
+    .page-ty-content{
+        position: relative;
+        z-index: 1;
+    }
     .page-ty{
-        background-color: var(--background-200);
-        background-image: url("/gracias.jpg");
+        background-color: var(--secundary-700);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -41,10 +53,10 @@ import Button from '../components/Button.astro';
         }
     }
     .page-ty h1{
-        color: var(--secundary-700);
+        color: var(--tertiary-200);
     }
     .page-ty p{
-        color: var(--secundary-900);
+        color: var(--background-50);
         margin-top: 16px;
         max-width: 75ch;
     }
