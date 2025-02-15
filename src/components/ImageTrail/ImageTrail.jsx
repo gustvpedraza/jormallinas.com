@@ -668,7 +668,7 @@ class ImageTrailVariant7 {
     this.cacheMousePos = { x: 0, y: 0 };
 
     this.visibleImagesCount = 0;
-    this.visibleImagesTotal = 9;
+    this.visibleImagesTotal = 1;
     this.visibleImagesTotal = Math.min(this.visibleImagesTotal, this.imagesTotal - 1);
 
     const handlePointerMove = ev => {

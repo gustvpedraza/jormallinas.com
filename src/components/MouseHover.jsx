@@ -8,17 +8,26 @@ const MouseHover = () => {
     <ImageTrail
         key={key}
         items={[
-        'servicios-icon-1.svg',
-        'servicios-hover-1.svg',
-        'servicios-icon-2.svg',
-        'servicios-hover-2.svg',
-        'servicios-icon-3.svg',
-        'servicios-hover-3.svg',
-        'servicios-icon-4.svg',
-        'servicios-hover-4.svg',
+        '/hover-mouse-img/1.svg',
+        '/hover-mouse-img/2.svg',
+        '/hover-mouse-img/3.svg',
+        '/hover-mouse-img/4.svg',
+        '/hover-mouse-img/5.svg',
+        '/hover-mouse-img/6.svg',
+        '/hover-mouse-img/7.svg',
+        '/hover-mouse-img/8.svg',
+        '/hover-mouse-img/9.svg',
+        '/hover-mouse-img/10.svg',
+        '/hover-mouse-img/11.svg',
+        '/hover-mouse-img/12.svg',
+        '/hover-mouse-img/13.svg',
+        '/hover-mouse-img/14.svg',
+        '/hover-mouse-img/15.svg',
+        '/hover-mouse-img/16.svg',
+
         // ...
         ]}
-        variant={5}
+        variant={7}
     />
     </div>
   )

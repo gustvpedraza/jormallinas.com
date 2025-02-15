@@ -9,7 +9,7 @@
 }
 
 .content__img {
-  width: 120px;
+  width: 500px;
   margin: 80px;
   aspect-ratio: 1/1;
   border-radius: 0;
@@ -23,8 +23,8 @@
 
 .content__img-inner {
   background-position: center;
-  width: calc(70% + 20px);
-  height: calc(70% + 20px);
+  width: calc(40% + 20px);
+  height: calc(40% + 20px);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -35,7 +35,7 @@
 .mouse-hover{
   height: auto;
   position: absolute;
-  top: 0;
+  top: -20%;
   left: 0;
   bottom: 0;
   right: 0;

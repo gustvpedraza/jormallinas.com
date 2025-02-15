@@ -11,8 +11,8 @@ import MouseHover from './MouseHover.jsx'
     <MouseHover client:load />
     <div class="hero">
         <div class="hero__text position-relative">
-            <canvas id="canvas-saludo" class="mb-24"></canvas>
-            <p class="text-center text-2xl sm-text-2xl xs-text-base text-semibold name">Soy Jormary Llinas • Web Designer y UX/UI Designer</p>
+            <canvas id="canvas-saludo"></canvas>
+            <h1 class="text-center text-2xl sm-text-2xl xs-text-base text-semibold name">Soy Jormary Llinas • Web Designer y UX/UI Designer</h1>
             <h2 class="text-center text-lg sm-text-lg xs-text-base text-regular mb-24 enunciado">Ayudo a startups, agencias de diseño y pequeñas empresas a convertir ideas en aplicaciones y páginas web responsive, optimizadas para ofrecer experiencias intuitivas que atraen y retienen usuarios.</h2>
             
             <div class="hero__buttons">
@@ -54,7 +54,7 @@ import MouseHover from './MouseHover.jsx'
         align-items: center;
     }
 
-    .hero__text h2,  .hero__text p{
+    .hero__text h2,  .hero__text h1{
         color: var(--background-50);
 
     }
@@ -143,8 +143,10 @@ import MouseHover from './MouseHover.jsx'
     }
 
     #canvas-saludo{
-        width: 800px;
+        width: 680px;
         height: auto;
+        margin-top: 40px;
+        margin-bottom: -16px;
     }
 
     @media (max-width: 1024px){
