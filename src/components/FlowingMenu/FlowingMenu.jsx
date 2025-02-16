@@ -59,7 +59,7 @@ function MenuItem({ link, text, image, imageHover, position }) {
       .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
   };
 
-  const repeatedMarqueeContent = Array.from({ length: 8 }).map((_, idx) => (
+  const repeatedMarqueeContent = Array.from({ length: 6 }).map((_, idx) => (
     <React.Fragment key={idx}>
       <span className='text-center text-8xl sm-text-7xl xs-text-4xl text-medium'>{text}</span>
       <div

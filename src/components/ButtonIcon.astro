@@ -7,7 +7,7 @@ interface Props {
 const { link, type = 'primary'  } = Astro.props;
 ---
 
-<button class={type} type="submit">
+<button class={type} type="submit" onclick="window.location.href='/'">
     <slot />
 
     <i class="projects__icon">
