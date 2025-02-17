@@ -2,12 +2,13 @@
 interface Props {
 	link: string,
     type: string;
+    label?: string;
 }
 
-const { link, type = 'primary'  } = Astro.props;
+const { link, type = 'primary', label  } = Astro.props;
 ---
 
-<a class={type} href={link} rel="noopener noreferrer">
+<a class={type} href={link} rel="noopener noreferrer" aria-label={label}>
     <slot />
 </a>
 

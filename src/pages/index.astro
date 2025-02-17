@@ -23,9 +23,14 @@ import Contact from '../components/Contact.astro';
 
 		gtag('config', 'G-BZJK73YDMV');
 		</script>
-
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<style>
+			[data-aos] {
+			  opacity: 0;
+			  transition-property: opacity, transform;
+			}
+		</style>
+		<link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<script is:inline defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="body">
@@ -115,8 +120,10 @@ import Contact from '../components/Contact.astro';
   });
 </script>
 <script is:inline>
-	AOS.init();
-  </script>
+	document.addEventListener("DOMContentLoaded", function() {
+    	AOS.init();
+  	});
+</script>
 
 
 

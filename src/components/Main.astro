@@ -42,7 +42,7 @@ const posts = (await getCollection('proyectos')).sort(
                                     </h4>
                                 </div>
                                 <div class="button-wrapper">
-                                    <Button link={`/proyectos/${post.id}/`} type="secundary">
+                                    <Button link={`/proyectos/${post.id}/`} type="secundary" label="Ver Proyecto">
                                         <i class="projects__icon">
                                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z"/>
@@ -68,7 +68,7 @@ const posts = (await getCollection('proyectos')).sort(
                         </h4>
                     </div>
                     <div class="button-wrapper">
-                        <button class="secundary" disabled style="width: 85px">
+                        <button class="secundary" disabled style="width: 85px" aria-label="Proximamente Disponible" title="Proximamente Disponible">
                             <i class="projects__icon disabled">
                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59375 0.906251L17.3125 0.90625C17.5197 0.90625 17.7184 0.98856 17.8649 1.13507C18.0114 1.28159 18.0938 1.4803 18.0938 1.6875V13.4062C18.0938 13.8377 17.744 14.1875 17.3125 14.1875C16.881 14.1875 16.5312 13.8377 16.5312 13.4062V3.57361L2.23993 17.8649C1.93483 18.17 1.44017 18.17 1.13507 17.8649C0.829976 17.5598 0.829976 17.0652 1.13507 16.7601L15.4264 2.46875L5.59375 2.46875C5.16228 2.46875 4.8125 2.11897 4.8125 1.6875C4.8125 1.25603 5.16228 0.906251 5.59375 0.906251Z" fill="#ffffff"/>
